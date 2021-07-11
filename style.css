@@ -22,7 +22,6 @@ body{
     height: 500px;
     width: 500px;
     border: 1px solid black;
-    background:#E4FDE1;
 }
 
 ul{
@@ -30,7 +29,6 @@ ul{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    color: #E4FDE1;
 }
 
 ul li{
@@ -39,12 +37,10 @@ ul li{
     border: 1px solid black;
     margin-top: 10px;
     padding-top: 3rem;
-    background: #456990;
     text-align: center;
     font-size: 2rem;
 }
 
 .empty{
-    background: #DAD4EF;
-    border: 2px solid #114B5F;
+    border: 2px solid blue;
 }
