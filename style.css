@@ -9,6 +9,9 @@ body{
     align-items: center;
     flex-direction: column;
 }
+/* TODO 
+Add custom color for game tile and container 
+*/
 
 #game-title{
     height: 10vh;
