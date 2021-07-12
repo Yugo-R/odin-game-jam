@@ -19,24 +19,39 @@ each puzzle when clicked and generate the puzzle
 inside the container
 */
 .navbar {
-    width: 100%;
     height: 100px;
     background: #385cc5;
 }
 
+.navbar ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .navbar ul li {
-    margin: 0 -300px 0 -300px;
-    padding: 0;
+    margin: 0 3vw;
     width: 100px;
-    height: 42px;
     border: 1px solid #66ffff;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .navbar ul li a {
+    text-align: center;
+    padding: .75em 0;
+    display: block;
     font-size: 20px;
     color: #66ffff;
     text-decoration: none;
+    transition: 300ms ease-in-out;
+    transition-property: color, background-color;
+}
+
+.navbar ul li a:hover {
+    background-color: #66ffff;
+    color: #385cc5;
 }
 
 /* TODO 
@@ -52,26 +67,47 @@ Add custom color for game tile and container
 
 #container{
     margin-top: 20px;
-    height: 500px;
-    width: 500px;
+    width: 40%;
+    aspect-ratio: 1/1;
     border: 1px solid black;
 }
 
-ul{
+@media (max-width: 768px) {
+    #container {
+        width: 70%;
+    }
+}
+
+/* 
+@media (min-width: 360px) {
+    #container {
+        width: 75vw;
+    }
+}
+
+@media (min-width: 750px) {
+    #container {
+        width: 60vw;
+    }
+}
+
+ */
+
+#container ul{
     list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: .75em;
+    margin: .5em;
 }
 
-ul li{
-    height: 150px;
-    width: 30%;
-    border: 1px solid black;
-    margin-top: 10px;
-    padding-top: 3rem;
-    text-align: center;
+#container ul li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 2rem;
+    border: 1px solid black;
+    aspect-ratio: 1/1;
 }
 
 .empty{
