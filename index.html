@@ -25,15 +25,15 @@
         </div>
         <div id="container">
             <ul>
-                <li>A</li>
-                <li>B</li>
-                <li>C</li>
-                <li>D</li>
-                <li>E</li>
-                <li>F</li>
-                <li>G</li>
-                <li>H</li>
-                <li class="empty"></li>
+                <li class="draggable" draggable="true">A</li>
+                <li class="draggable" draggable="true">B</li>
+                <li class="draggable" draggable="true">C</li>
+                <li class="draggable" draggable="true">D</li>
+                <li class="draggable" draggable="true">E</li>
+                <li class="draggable" draggable="true">F</li>
+                <li class="draggable" draggable="true">G</li>
+                <li class="draggable" draggable="true" ondragstart="drag(event)">H</li>
+                <li class="empty" ondrop="drop(event)"></li>
             </ul>
         </div>
         <script src="script.js"></script>
