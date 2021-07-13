@@ -91,6 +91,7 @@ Create puzzle pieces
     border: 1px solid white;
     /* background: url(images/nick-fewings-y-xqEZPA6KQ-unsplash.jpg); */
     cursor: pointer;
+    object-fit: cover;
 }
 
 /* #tile1 {

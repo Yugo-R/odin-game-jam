@@ -2,7 +2,7 @@
 Create a function that will change 
 the background of the tiles on function call
 */
-const imageArray = ["images/benjamin-suter-vXHFjQyWuMo-unsplash.jpg", "images/david-becker-dMeEJRE18VI-unsplash.jpg", "images/nick-fewings-y-xqEZPA6KQ-unsplash.jpg", "images/daniels-joffe-wWTow3BNoCs-unsplash.jpg"];
+const imageArray = ["images/benjamin-suter-vXHFjQyWuMo-unsplash.jpg", "images/david-becker-dMeEJRE18VI-unsplash.jpg", "images/nick-fewings-y-xqEZPA6KQ-unsplash.jpg", "images/daniels-joffe-wWTow3BNoCs-unsplash.jpg", "images/erik-mclean-OQgpRHFJwbQ-unsplash.jpg", "images/kyaw-tun-ECvYbWrTPNU-unsplash.jpg", "images/brian-mcgowan-DsYv1KJHrlE-unsplash.jpg", "images/luis-mejicanos-aaqBs1zDeyA-unsplash.jpg", "images/reno-laithienne-CwJP_8mKvTo-unsplash.jpg"];
 const imgPos = ["left top","center top","right top","left center","center center","right center","left bottom","center bottom"]
 const tiles = document.querySelectorAll('[data-tile]');
 
@@ -19,7 +19,7 @@ changeImgBtn.addEventListener('click', ()=>{
 })
 
 //Added this new function that will get the next img in the array.
-// I added this for easier understanding of what is going on, can be replaced with the GetRandomInt()
+// I added this for easier understanding of what is going on, can be replaced with the GetRandomInt() to get random images
 function getNextImg(currentImg){
     let imgIndex = imageArray.indexOf(currentImg)
     if(imgIndex == imageArray.length - 1){
@@ -45,6 +45,6 @@ function changeElementBackgroundImage() {
     for(let i=0; i < tiles.length; i++){
         tiles[i].style.backgroundImage = `url(${image})`;
         tiles[i].style.backgroundPosition = imgPos[i];
-        tiles[i].style.objectFit = "cover";
+        tiles[i].style.backgroundSize = "500px 500px";
     }
 }
