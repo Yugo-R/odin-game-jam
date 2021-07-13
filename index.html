@@ -5,37 +5,76 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Custom SASS -->
         <link rel="stylesheet" href="grid-based-framework/css/style.css">
-        <!-- Custom CSS -->
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <nav class="navbar">
             <div class="grid12 center">
                 <ul class="row">
-                    <li class="grid2"><a href="#puzzle1" onclick="setUp(puzzle1)">Puzzle 1</a></li>
-                    <li class="grid2"><a href="#puzzle2" onclick="setUp(puzzle2)">Puzzle 2</a></li>
-                    <li class="grid2"><a href="#puzzle3" onclick="setUp(puzzle3)">Puzzle 3</a></li>
+                    <li class="grid2"><a href="#content-1" onclick="setUp(puzzle1)">Puzzle 1</a></li>
+                    <li class="grid2"><a href="#content-2" onclick="setUp(puzzle2)">Puzzle 2</a></li>
+                    <li class="grid2"><a href="#content-3" onclick="setUp(puzzle3)">Puzzle 3</a></li>
                 </ul>
             </div>
         </nav>
         <div id="game-title">
             <h1>Puzzle slide game</h1>
         </div>
-        <div id="container">
-            <ul>
-                <li class="tile1">A</li>
-                <li class="tile2">B</li>
-                <li class="tile3">C</li>
-                <li class="tile4">D</li>
-                <li class="tile5">E</li>
-                <li class="tile6">F</li>
-                <li class="tile7">G</li>
-                <li class="tile8">H</li>
-                <li class="empty"></li>
-            </ul>
+        <div class="content" id="content-1">
+            <div class="container" id="container1">
+                <ul>
+                    <li>A</li>
+                    <li>B</li>
+                    <li>C</li>
+                    <li>D</li>
+                    <li>E</li>
+                    <li>F</li>
+                    <li>G</li>
+                    <li>H</li>
+                    <li class="empty"></li>
+                </ul>
+            </div>
         </div>
-        <script src="index.js"></script>
+        <div class="content" id="content-2">
+            <div class="container" id="container2">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                    <li>11</li>
+                    <li>12</li>
+                    <li>13</li>
+                    <li>14</li>
+                    <li>15</li>
+                    <li class="empty"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content" id="content-3">
+            <div class="container" id="container3">
+                <ul>
+                    <li id="tile1" data-tile></li>
+                    <li id="tile2" data-tile></li>
+                    <li id="tile3" data-tile></li>
+                    <li id="tile4" data-tile></li>
+                    <li id="tile5" data-tile></li>
+                    <li id="tile6" data-tile></li>
+                    <li id="tile7" data-tile></li>
+                    <li id="tile8" data-tile></li>
+                    <li class="empty"></li>
+                </ul>
+            </div>
+            <button id="change-tile">click me</button>
+        </div>
+        
+        <script type="module" src="main.js"></script>
     </body>
 </html>
