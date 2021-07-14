@@ -52,6 +52,12 @@ body{
     width: 100%;
 }
 
+.content{
+    height: 100vh;
+    width: 100%;
+}
+
+
 .container{
     margin-top: 20px;
     height: 500px;
@@ -71,6 +77,9 @@ body{
 
 #content-3{
     margin-bottom: 50px;
+}
+
+#content-3{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -97,6 +106,11 @@ body{
     cursor: pointer;
 }
 
+#change-tile{
+    height: 40px;
+    width: 100px;
+}
+
 ul{
     list-style-type: none;
     display: flex;
@@ -119,7 +133,7 @@ ul li{
     background: #fff;
 }
 
-.tile1, .tile2, .tile3, .tile4, .tile5, .tile6, .tile7, .tile8 {
+#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8 {
     display: flex;
     width: 150px;
     height: 150px;
