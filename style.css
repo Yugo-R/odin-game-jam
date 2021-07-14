@@ -119,7 +119,7 @@ ul li{
     background: #fff;
 }
 
-.tile1, .tile2, .tile3, .tile4, .tile5, .tile6, .tile7, .tile8 {
+#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8 {
     display: flex;
     width: 150px;
     height: 150px;
