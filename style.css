@@ -69,6 +69,12 @@ body{
     width: 100%;
 }
 
+.content{
+    height: 100vh;
+    width: 100%;
+}
+
+
 .container{
     margin-top: 20px;
     height: 500px;
@@ -88,6 +94,9 @@ body{
 
 #content-3{
     margin-bottom: 50px;
+}
+
+#content-3{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -99,6 +108,29 @@ body{
     margin-bottom: 0.7rem;
 }
 
+<<<<<<< HEAD
+=======
+#change-tile{
+    margin: 20px 0 20px 0;
+    padding: 10px 0 10px 0;
+    height: 40px;
+    width: 100px;
+    color: #fff;
+    background: #e66465;
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    text-transform: capitalize;
+    border: 1px solid #ffcc66;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#change-tile{
+    height: 40px;
+    width: 100px;
+}
+
+>>>>>>> 5b7911f7d32681def8fd4291cd90a36260a03552
 ul{
     list-style-type: none;
     display: flex;
@@ -121,13 +153,18 @@ ul li{
     background: #fff;
 }
 
+<<<<<<< HEAD
 .tile {
+=======
+#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8 {
+>>>>>>> 5b7911f7d32681def8fd4291cd90a36260a03552
     display: flex;
     width: 150px;
     height: 150px;
     border: 1px solid white;
     cursor: pointer;
     object-fit: cover;
+<<<<<<< HEAD
 }
 
 #content-2 .tile {
@@ -142,4 +179,6 @@ ul li{
     background-attachment: fixed;
     background-size: 685px 950px !important;
     background-position: 550px 0;
+=======
+>>>>>>> 5b7911f7d32681def8fd4291cd90a36260a03552
 }

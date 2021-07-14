@@ -14,6 +14,7 @@ window.addEventListener('load',()=>{
 //Event listner for the button to be clicked
 changeImgBtn.addEventListener('click', ()=>{
     changeElementBackgroundImage();
+<<<<<<< HEAD
 });
 
 // Event listeners for puzzle visibility
@@ -37,4 +38,6 @@ puzzle3.addEventListener('click', () => {
     document.getElementById("content-1").style.display = "none";
     document.getElementById("content-2").style.display = "none";
     document.getElementById("content-3").style.display = "block";
+=======
+>>>>>>> 5b7911f7d32681def8fd4291cd90a36260a03552
 });
