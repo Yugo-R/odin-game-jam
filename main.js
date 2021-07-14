@@ -11,4 +11,4 @@ window.addEventListener('load',()=>{
 //Event listner for the button to be clicked
 changeImgBtn.addEventListener('click', ()=>{
     changeElementBackgroundImage();
-})
+});
