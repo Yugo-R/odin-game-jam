@@ -21,7 +21,7 @@ document.addEventListener("dragover", (e)=>{
     e.preventDefault();
   });
 
-//Event listener for all li
+//Event listener for tiles first puzzle
 tiles.forEach(tile =>{
     tile.addEventListener("dragstart", (e)=>{
         srcTile = e.target;
