@@ -31,6 +31,6 @@ function changeElementBackgroundImage() {
     for(let i=0; i < tiles.length; i++){
         tiles[i].style.backgroundImage = `url(${image})`;
         tiles[i].style.backgroundPosition = imgPos[i];
-        tiles[i].style.backgroundSize = "500px 500px";
+       
     }
 }

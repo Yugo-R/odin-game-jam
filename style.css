@@ -152,23 +152,23 @@ ul li{
 
 .tile {
     display: flex;
-    width: 150px;
-    height: 150px;
+    /* width: 150px;
+    height: 150px; */
     border: 1px solid white;
     cursor: pointer;
     object-fit: cover;
 }
 
 #content-2 .tile {
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 685px 950px !important;
-    background-position: 550px 0;
+    background-position: 550px 0; */
 }
 
 #content-3 .tile {
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 685px 950px !important;
-    background-position: 550px 0;
+    /* background-repeat: no-repeat;
+    background-attachment: fixed; */
+    background-size: 500px 500px ;
+    /* background-position: 550px 0; */
 }
