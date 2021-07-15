@@ -15,6 +15,9 @@ body{
 
 .center {
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar {
@@ -41,10 +44,24 @@ body{
 
 #game-title{
     height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 50px;
+    display: block;
     text-transform: capitalize;
+}
+
+#change-tile{
+    margin: 10px auto;
+    padding: 10px 0 10px 0;
+    height: 40px;
+    width: 100px;
+    color: #66ffff;
+    background: #385cc5;
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    text-transform: capitalize;
+    border: 1px solid #66ffff;
+    border-radius: 20px;
+    cursor: pointer;
 }
 
 .content{
@@ -133,11 +150,25 @@ ul li{
     background: #fff;
 }
 
-#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8 {
+.tile {
     display: flex;
     width: 150px;
     height: 150px;
     border: 1px solid white;
     cursor: pointer;
     object-fit: cover;
+}
+
+#content-2 .tile {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 685px 950px !important;
+    background-position: 550px 0;
+}
+
+#content-3 .tile {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 685px 950px !important;
+    background-position: 550px 0;
 }

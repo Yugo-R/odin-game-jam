@@ -12,48 +12,53 @@
         <nav class="navbar">
             <div class="grid12 center">
                 <ul class="row">
-                    <li class="grid2"><a href="#content-1" onclick="setUp(puzzle1)">Puzzle 1</a></li>
-                    <li class="grid2"><a href="#content-2" onclick="setUp(puzzle2)">Puzzle 2</a></li>
-                    <li class="grid2"><a href="#content-3" onclick="setUp(puzzle3)">Puzzle 3</a></li>
+                    <li class="grid2"><a href="#" id="puzzle1">Puzzle 1</a></li>
+                    <li class="grid2"><a href="#" id="puzzle2">Puzzle 2</a></li>
+                    <li class="grid2"><a href="#" id="puzzle3">Puzzle 3</a></li>
                 </ul>
             </div>
         </nav>
         <div id="game-title">
             <h1>Puzzle slide game</h1>
+            <div class="center">
+                <button id="change-tile">click me</button>
+            </div>
         </div>
         <div class="content" id="content-1">
             <div class="container" id="container1">
                 <ul>
-                    <li id="tile-1" draggable="true">A</li>
-                    <li id="tile-2" draggable="true">B</li>
-                    <li id="tile-3" draggable="true">C</li>
-                    <li id="tile-4" draggable="true">D</li>
-                    <li id="tile-5" draggable="true">E</li>
-                    <li id="tile-6" draggable="true">F</li>
-                    <li id="tile-7" draggable="true">G</li>
-                    <li id="tile-8" draggable="true">H</li>
-                    <li id="tile-9" class="empty"></li>
+
+                    <li class="tile" data-tile id="tile-1" draggable="true">A</li>
+                    <li class="tile" data-tile id="tile-2" draggable="true">B</li>
+                    <li class="tile" data-tile id="tile-3" draggable="true">C</li>
+                    <li class="tile" data-tile id="tile-4" draggable="true">D</li>
+                    <li class="tile" data-tile id="tile-5" draggable="true">E</li>
+                    <li class="tile" data-tile id="tile-6" draggable="true">F</li>
+                    <li class="tile" data-tile id="tile-7" draggable="true">G</li>
+                    <li class="tile" data-tile id="tile-8" draggable="true">H</li>
+                    <li class="tile" data-tile id="tile-9" class="empty"></li>
+
                 </ul>
             </div>
         </div>
         <div class="content" id="content-2">
             <div class="container" id="container2">
                 <ul>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
-                    <li>6</li>
-                    <li>7</li>
-                    <li>8</li>
-                    <li>9</li>
-                    <li>10</li>
-                    <li>11</li>
-                    <li>12</li>
-                    <li>13</li>
-                    <li>14</li>
-                    <li>15</li>
+                    <li class="tile" data-tile></li>
+                    <li class="tile" data-tile></li>
+                    <li class="tile" data-tile></li>
+                    <li class="tile" data-tile></li>
+                    <li class="tile" data-tile></li>
+                    <li class="tile" data-tile></li>
+                    <li class="tile" data-tile></li>
+                    <li class="tile" data-tile></li>
+                    <li class="tile" data-tile></li>
+                    <li class="tile" data-tile></li>
+                    <li class="tile" data-tile></li>
+                    <li class="tile" data-tile></li>
+                    <li class="tile" data-tile></li>
+                    <li class="tile" data-tile></li>
+                    <li class="tile" data-tile></li>
                     <li class="empty"></li>
                 </ul>
             </div>
@@ -61,18 +66,17 @@
         <div class="content" id="content-3">
             <div class="container" id="container3">
                 <ul>
-                    <li id="tile1" data-tile></li>
-                    <li id="tile2" data-tile></li>
-                    <li id="tile3" data-tile></li>
-                    <li id="tile4" data-tile></li>
-                    <li id="tile5" data-tile></li>
-                    <li id="tile6" data-tile></li>
-                    <li id="tile7" data-tile></li>
-                    <li id="tile8" data-tile></li>
+                    <li class="tile" data-tile></li>
+                    <li class="tile" data-tile></li>
+                    <li class="tile" data-tile></li>
+                    <li class="tile" data-tile></li>
+                    <li class="tile" data-tile></li>
+                    <li class="tile" data-tile></li>
+                    <li class="tile" data-tile></li>
+                    <li class="tile" data-tile></li>
                     <li class="empty"></li>
                 </ul>
             </div>
-            <button id="change-tile">click me</button>
         </div>
         
         <script type="module" src="main.js"></script>

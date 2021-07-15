@@ -9,6 +9,9 @@ let srcTile = null;
 // When the page load
 window.addEventListener('load',()=>{
     changeElementBackgroundImage();
+    document.getElementById("content-1").style.display = "none";
+    document.getElementById("content-2").style.display = "none";
+    document.getElementById("content-3").style.display = "none";
 });
 
 //Event listner for the button to be clicked
@@ -40,3 +43,26 @@ tiles.forEach(tile =>{
         }
     })
 })
+
+// Event listeners for puzzle visibility
+const puzzle1 = document.querySelector("#puzzle1");
+const puzzle2 = document.querySelector("#puzzle2");
+const puzzle3 = document.querySelector("#puzzle3");
+
+puzzle1.addEventListener('click', () => {
+    document.getElementById("content-1").style.display = "block";
+    document.getElementById("content-2").style.display = "none";
+    document.getElementById("content-3").style.display = "none";
+});
+
+puzzle2.addEventListener('click', () => {
+    document.getElementById("content-1").style.display = "none";
+    document.getElementById("content-2").style.display = "block";
+    document.getElementById("content-3").style.display = "none";
+});
+
+puzzle3.addEventListener('click', () => {
+    document.getElementById("content-1").style.display = "none";
+    document.getElementById("content-2").style.display = "none";
+    document.getElementById("content-3").style.display = "block";
+});
