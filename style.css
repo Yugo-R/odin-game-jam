@@ -27,6 +27,14 @@ body{
     opacity: 0.8;
 }
 
+/* Need to change */
+.navbar ul{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
 .navbar ul li {
     margin: 0 -300px 0 -300px;
     padding: 0;
@@ -69,20 +77,66 @@ body{
     width: 100%;
 }
 
-.content{
-    height: 100vh;
-    width: 100%;
-}
-
-
-.container{
-    margin-top: 20px;
-    height: 500px;
-    width: 500px;
+#container{
+    padding: 5px;
     border: 1px solid black;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: white;
 }
 
-#container2{
+#container li{
+    margin-top: 5px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.empty{
+    border: 2px solid blue !important;
+    background: #fff;
+}
+
+.emptyImg{
+    border: 2px solid blue !important;
+    background: #fff;
+}
+
+.tile {
+    display: flex;
+    /* width: 150px;
+    height: 150px; */
+    border: 1px solid white;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+#change-tile{
+    margin: 20px 0 20px 0;
+    padding: 10px 0 10px 0;
+    height: 40px;
+    width: 100px;
+    color: #fff;
+    background: #e66465;
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    text-transform: capitalize;
+    border: 1px solid #ffcc66;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#change-tile{
+    height: 40px;
+    width: 100px;
+}
+
+/* #container2{
     height: 650px;
     width: 650px;
 }
@@ -106,69 +160,18 @@ body{
 
 #container3 ul{
     margin-bottom: 0.7rem;
-}
+} */
 
-#change-tile{
-    margin: 20px 0 20px 0;
-    padding: 10px 0 10px 0;
-    height: 40px;
-    width: 100px;
-    color: #fff;
-    background: #e66465;
-    font-family: "Rubik", sans-serif;
-    font-size: 16px;
-    text-transform: capitalize;
-    border: 1px solid #ffcc66;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-#change-tile{
-    height: 40px;
-    width: 100px;
-}
-
-ul{
-    list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-ul li{
-    height: 150px;
-    width: 30%;
-    border: 1px solid black;
-    margin-top: 12px;
-    padding-top: 3.5rem;
-    text-align: center;
-    font-size: 2rem;
-}
-
-.empty{
-    border: 2px solid blue;
-    background: #fff;
-}
-
-.tile {
-    display: flex;
-    /* width: 150px;
-    height: 150px; */
-    border: 1px solid white;
-    cursor: pointer;
-    object-fit: cover;
-}
-
-#content-2 .tile {
-    /* background-repeat: no-repeat;
+/* #content-2 .tile {
+    background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 685px 950px !important;
-    background-position: 550px 0; */
-}
+    background-position: 550px 0;
+} */
 
-#content-3 .tile {
-    /* background-repeat: no-repeat;
-    background-attachment: fixed; */
+/* #content-3 .tile {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: 500px 500px ;
-    /* background-position: 550px 0; */
-}
+    background-position: 550px 0;
+} */
