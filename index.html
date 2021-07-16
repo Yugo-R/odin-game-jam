@@ -12,9 +12,9 @@
         <nav class="navbar">
             <div class="grid12 center">
                 <ul class="row">
-                    <li class="grid2"><a href="#" id="puzzle1">Puzzle 1</a></li>
-                    <li class="grid2"><a href="#" id="puzzle2">Puzzle 2</a></li>
-                    <li class="grid2"><a href="#" id="puzzle3">Puzzle 3</a></li>
+                    <li class="left-offset2"><a href="#" id="puzzle1">Puzzle 1</a></li>
+                    <li><a href="#" id="puzzle2">Puzzle 2</a></li>
+                    <li class="right-offset2"><a href="#" id="puzzle3">Puzzle 3</a></li>
                 </ul>
             </div>
         </nav>
@@ -23,6 +23,10 @@
             <!-- <div class="center">
                 <button id="change-tile">click me</button>
             </div> -->
+            <div id="modal" class="hide">
+                <div id="header"><button id="closeBtn" onclick="hideModal()">x</button></div>
+                <div id="message"></div>
+            </div>
         </div>
         <div id="container">
         </div>

@@ -118,3 +118,36 @@ container.addEventListener("drop", (e)=>{
     }
 })
 
+// Not sure what to do with this function
+function checkPuzzle() {
+    if(isCorrect(puzzleOne, curPuzzleState)) {
+        showModal();
+    } else if(isCorrect(puzzleTwo, curPuzzleState)) {
+        showModal();
+    } else if(isCorrect(puzzleThree, curPuzzleState)) {
+        showModal();
+    }
+}
+
+//Check if puzzle is correct
+function isCorrect(solution, content) {
+    if(JSON.stringify(solution) == JSON.stringify(content)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+//For modal
+const modal = document.getElementById("modal");
+const closeBtn = document.getElementById("closeBtn");
+const message = document.getElementById("message");
+
+function showModal() {
+    message.innerText = "Winner!";
+    modal.classList.remove("hide");    
+}
+
+function hideModal() {
+    modal.classList.add("hide");
+}

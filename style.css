@@ -29,15 +29,14 @@ body{
 
 /* Need to change */
 .navbar ul{
-    list-style-type: none;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
 }
 
 .navbar ul li {
-    margin: 0 -300px 0 -300px;
-    padding: 0;
+    padding: 10px;
     width: 100px;
     height: 42px;
     border: 1px solid #66ffff;
@@ -54,7 +53,9 @@ body{
     height: 10vh;
     margin-top: 50px;
     display: block;
+    text-align: center;
     text-transform: capitalize;
+    z-index: 1;
 }
 
 #change-tile{
@@ -136,6 +137,36 @@ body{
     width: 100px;
 }
 
+/* ---------- Modal Settings ---------- */
+#modal {
+    margin-top: 64px;
+    height: 250px;
+    width: 700px;
+    background: #385cc5;
+    border: 5px solid #66ffff;
+}
+
+#header {
+    text-align: left;
+}
+
+#closeBtn {
+    color: #fff;
+    margin: 0px 5px 5px 15px;
+    font-size: 50px;
+    background: none;
+    cursor: pointer;
+}
+
+#message {
+    color: #66ffff;
+    margin-top: 20px;
+    font-size: 100px;
+}
+
+.hide {
+    display: none;
+}
 /* #container2{
     height: 650px;
     width: 650px;
