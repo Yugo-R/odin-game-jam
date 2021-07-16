@@ -15,14 +15,6 @@ function getNextImg(currentImg){
         return imageArray[imgIndex + 1];
     }
 }
-function getRandomInt() {
-    return Math.floor(Math.random()*imageArray.length);
-}
-
-function chooseRandomImage() {
-    var randomInt = getRandomInt();
-    return imageArray[randomInt];
-}
 
 function changeElementBackgroundImage() {
     // This is a ternary operator(the same things as an if else loop). It will check if a backgound image doesn't exist, if it doesn't exist it will parse the last item of the imageArray to get the first imageArray item. Else it will parse the current backgound img and it will return the next img. 

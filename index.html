@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/083e2fef0b.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="grid-based-framework/css/style.css">
         <link rel="stylesheet" href="style.css">
     </head>
@@ -18,65 +19,67 @@
                 </ul>
             </div>
         </nav>
-        <div id="game-title">
-            <h1>Puzzle slide game</h1>
-            <div class="center">
-                <button id="change-tile">click me</button>
-            </div>
+        <h1 id="game-title">Sliding Tile Puzzle</h1>
+        <div id="modal" class="hide">
+            <div id="header"><button id="closeBtn" onclick="hideModal()">x</button></div>
+            <h1 id="message"></h1>
         </div>
         <div class="content" id="content-1">
-            <div class="container" id="container1">
+            <div class="container" id="container">
                 <ul>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="empty"></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
                 </ul>
             </div>
         </div>
         <div class="content" id="content-2">
             <div class="container" id="container2">
                 <ul>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="empty"></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
+                    <li data-tile></li>
                 </ul>
             </div>
-        </div>
-        <div class="content" id="content-3">
-            <div class="container" id="container3">
-                <ul>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="tile" data-tile></li>
-                    <li class="empty"></li>
-                </ul>
+            <div class="content" id="content-3">
+                <div class="container" id="container3">
+                    <ul>
+                        <li data-tile></li>
+                        <li data-tile></li>
+                        <li data-tile></li>
+                        <li data-tile></li>
+                        <li data-tile></li>
+                        <li data-tile></li>
+                        <li data-tile></li>
+                        <li data-tile></li>
+                        <li data-tile></li>
+                    </ul>
+                </div>
+                <div class="center">
+                    <button class="change-tile"><i class="fas fa-chevron-left"></i></button>
+                    <button class="change-tile"><i class="fas fa-chevron-right"></i></button>
+                </div>
             </div>
-        </div>
-        
-        <script type="module" src="main.js"></script>
+    
+    <script src="main.js"></script>
     </body>
 </html>
