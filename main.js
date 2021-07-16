@@ -1,3 +1,13 @@
+
+import changeElementBackgroundImage from "./javascript/displayimg.js";
+
+//Select id of btn
+const changeImgBtn = document.querySelector('#change-tile');
+const tiles = document.querySelectorAll('li');
+const emptyTile = document.querySelectorAll('.empty');
+let srcTile = null;
+
+
 // When the page load
 window.addEventListener('load', () => {
     setUpPuzzle1();
