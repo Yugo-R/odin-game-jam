@@ -167,6 +167,33 @@ body{
 .hide {
     display: none;
 }
+
+/* ---------- Change Image Button Settings ---------- */
+#changeImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#prevImg {
+    position: relative;
+    bottom: 270px;
+    right: 400px;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+#nextImg {
+    position: relative;
+    bottom: 270px;
+    left: 400px;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.hideBtn {
+    display: none;
+}
 /* #container2{
     height: 650px;
     width: 650px;

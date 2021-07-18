@@ -50,6 +50,7 @@ nav.addEventListener('click',(e)=>{
             puzzleCd.resizePuzzleContainer(3);
             curDrag = puzzleCd.sortDrag(curPuzzleState);
             puzzleCd.attributeDrag(curDrag);
+            hideBtn();
             break;
         case "puzzle2":
             puzzleCd.resetPuzzle();
@@ -59,6 +60,7 @@ nav.addEventListener('click',(e)=>{
             puzzleCd.resizePuzzleContainer(4);
             curDrag = puzzleCd.sortDrag(curPuzzleState);
             puzzleCd.attributeDrag(curDrag);
+            hideBtn();
             break;
         case "puzzle3":
             puzzleCd.resetPuzzle();
@@ -68,6 +70,7 @@ nav.addEventListener('click',(e)=>{
             puzzleCd.resizePuzzleContainer(3);
             curDrag = puzzleCd.sortDrag(curPuzzleState);
             puzzleCd.attributeDrag(curDrag);
+            showBtn();
             break;
     }
 })
@@ -138,4 +141,39 @@ function showModal() {
 
 function hideModal() {
     modal.classList.add("hide");
+}
+
+//For changeImg Buttons
+const changeImg = document.getElementById("changeImg");
+const prevImg = document.getElementById("prevImg");
+const nextImg = document.getElementById("nextImg");
+const imageArray = ["../images/benjamin-suter-vXHFjQyWuMo-unsplash.jpg", "../images/david-becker-dMeEJRE18VI-unsplash.jpg", "../images/nick-fewings-y-xqEZPA6KQ-unsplash.jpg", "../images/daniels-joffe-wWTow3BNoCs-unsplash.jpg", "../images/erik-mclean-OQgpRHFJwbQ-unsplash.jpg", "../images/kyaw-tun-ECvYbWrTPNU-unsplash.jpg", "../images/brandon-nelson-2smDZopBMso-unsplash.jpg", "../images/luis-mejicanos-aaqBs1zDeyA-unsplash.jpg", "../images/reno-laithienne-CwJP_8mKvTo-unsplash.jpg"];
+
+//Show buttons when puzzle3 is active
+function showBtn() {
+    prevImg.classList.remove("hideBtn");
+    nextImg.classList.remove("hideBtn");
+}
+
+function hideBtn() {
+    prevImg.classList.add("hideBtn");
+    nextImg.classList.add("hideBtn");
+}
+
+//Change Image on click
+changeImg.addEventListener("click", function (event) {
+    let target = event.target;
+    if (target.document.getElementById("prevImg")) {
+        prev();
+    } else if (target.document.getElementById("nextImg")) {
+        next();
+    }
+});
+
+function prev() {
+
+}
+
+function next() {
+    
 }
