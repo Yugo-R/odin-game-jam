@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/083e2fef0b.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="grid-based-framework/css/style.css">
         <link rel="stylesheet" href="style.css">
     </head>
@@ -12,9 +13,9 @@
         <nav class="navbar">
             <div class="grid12 center">
                 <ul class="row">
-                    <li class="grid2"><a href="#" id="puzzle1">Puzzle 1</a></li>
-                    <li class="grid2"><a href="#" id="puzzle2">Puzzle 2</a></li>
-                    <li class="grid2"><a href="#" id="puzzle3">Puzzle 3</a></li>
+                    <li class="left-offset2"><a href="#" id="puzzle1">Puzzle 1</a></li>
+                    <li><a href="#" id="puzzle2">Puzzle 2</a></li>
+                    <li class="right-offset2"><a href="#" id="puzzle3">Puzzle 3</a></li>
                 </ul>
             </div>
         </nav>
@@ -23,9 +24,18 @@
             <!-- <div class="center">
                 <button id="change-tile">click me</button>
             </div> -->
+            <div id="modal" class="hide">
+                <div id="header"><button id="closeBtn" onclick="hideModal()">x</button></div>
+                <div id="message"></div>
+            </div>
         </div>
         <div id="container">
         </div>
+        <div id="changeImg">
+            <button id="prevImg" class="hideBtn"><i class="fas fa-chevron-left"></i></button>
+            <button id="nextImg" class="hideBtn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        
         <script type="module" src="main.js"></script>
     </body>
 </html>

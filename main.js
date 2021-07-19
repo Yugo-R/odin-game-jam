@@ -50,6 +50,7 @@ nav.addEventListener('click',(e)=>{
             puzzleCd.resizePuzzleContainer(3);
             curDrag = puzzleCd.sortDrag(curPuzzleState);
             puzzleCd.attributeDrag(curDrag);
+            hideBtn();
             break;
         case "puzzle2":
             puzzleCd.resetPuzzle();
@@ -59,6 +60,7 @@ nav.addEventListener('click',(e)=>{
             puzzleCd.resizePuzzleContainer(4);
             curDrag = puzzleCd.sortDrag(curPuzzleState);
             puzzleCd.attributeDrag(curDrag);
+            hideBtn();
             break;
         case "puzzle3":
             puzzleCd.resetPuzzle();
@@ -68,6 +70,7 @@ nav.addEventListener('click',(e)=>{
             puzzleCd.resizePuzzleContainer(3);
             curDrag = puzzleCd.sortDrag(curPuzzleState);
             puzzleCd.attributeDrag(curDrag);
+            showBtn();
             break;
     }
 })
@@ -118,3 +121,81 @@ container.addEventListener("drop", (e)=>{
     }
 })
 
+//Check if puzzle is correct
+function isCorrect(solution, content) {
+    if(JSON.stringify(solution) == JSON.stringify(content)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+//For modal
+const modal = document.getElementById("modal");
+const message = document.getElementById("message");
+
+function showModal() {
+    message.innerText = "Winner!";
+    modal.classList.remove("hide");    
+}
+
+function hideModal() {
+    modal.classList.add("hide");
+}
+
+//For changeImg Buttons
+const prevImg = document.getElementById("prevImg");
+const nextImg = document.getElementById("nextImg");
+const imageArray = ["../images/benjamin-suter-vXHFjQyWuMo-unsplash.jpg", 
+"../images/david-becker-dMeEJRE18VI-unsplash.jpg", 
+"../images/nick-fewings-y-xqEZPA6KQ-unsplash.jpg", 
+"../images/daniels-joffe-wWTow3BNoCs-unsplash.jpg", 
+"../images/erik-mclean-OQgpRHFJwbQ-unsplash.jpg", 
+"../images/kyaw-tun-ECvYbWrTPNU-unsplash.jpg", 
+"../images/brandon-nelson-2smDZopBMso-unsplash.jpg", 
+"../images/luis-mejicanos-aaqBs1zDeyA-unsplash.jpg", 
+"../images/reno-laithienne-CwJP_8mKvTo-unsplash.jpg"];
+
+//Show buttons when puzzle3 is active
+function showBtn() {
+    prevImg.classList.remove("hideBtn");
+    nextImg.classList.remove("hideBtn");
+}
+
+function hideBtn() {
+    prevImg.classList.add("hideBtn");
+    nextImg.classList.add("hideBtn");
+}
+
+//Change Image on click
+let li = document.getElementById('container').getElementsByTagName('li');
+console.log (li);
+
+nextImg.addEventListener("click", function () {
+    nextImage();
+    
+});
+
+prevImg.addEventListener("click", function () {
+    prevImage();
+});
+
+function getNextImg(currentImg){
+    let imgIndex = imageArray.indexOf(currentImg)
+    if(imgIndex == imageArray.length - 1){
+        return imageArray[0];
+    }
+    else{
+        return imageArray[imgIndex + 1];
+    }
+}
+
+let nextImage = () => {
+    // This is a ternary operator(the same things as an if else loop). It will check if a backgound image doesn't exist, if it doesn't exist it will parse the last item of the imageArray to get the first imageArray item. Else it will parse the current backgound img and it will return the next img. 
+    let image = !li[0].style.backgroundImage ? getNextImg(imageArray[imageArray.length - 1]) : getNextImg(li[0].style.backgroundImage.split("\"")[1]);
+    
+    for(let i=0; i < li.length; i++){
+        li[i].style.backgroundImage = `url(${image})`;
+        li[i].style.backgroundPosition = puzzleThree[i];    
+    }
+};
