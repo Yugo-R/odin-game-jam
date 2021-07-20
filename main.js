@@ -24,7 +24,8 @@ let puzzleCd = puzzle();
 // When the page load
 window.addEventListener('load',()=>{
     createPzl(3,puzzleOne);
-    hideBtn();
+    // hideBtn();
+    // showModal();
 });
 
 //Event listener on the navbar
@@ -51,11 +52,11 @@ function createPzl(gridNum,puzzleNum){
     //Reset Puzzle
     puzzleCd.resetPuzzle();
     //variable that will keep track of puzzle state
-    curPuzzleState = puzzleNum;
+    curPuzzleState = [...puzzleNum];
     //shuffle puzzle(shuffle the array)
     puzzleCd.shufflePuzzle(curPuzzleState);
     //Create puzzle
-    puzzleNum != puzzleThree? puzzleCd.createPuzzle(puzzleNum):puzzleCd.createImgPuzzle(puzzleNum, puzzleCd.selectImg());
+    puzzleNum != puzzleThree? puzzleCd.createPuzzle(curPuzzleState):puzzleCd.createImgPuzzle(curPuzzleState, puzzleCd.selectImg());
     //Resize container
     puzzleCd.resizePuzzleContainer(gridNum);
     //Sort draggable Tiles
@@ -88,6 +89,15 @@ container.addEventListener("drop", (e)=>{
         //Update puzzle array
         curPuzzleState = puzzleCd.getPuzzleState();
 
+        //Check if gameover
+        if(puzzleCd.gameOver(curPuzzleState,puzzleOne)){
+            showModal();
+        }
+        else{
+            curDrag = puzzleCd.sortDrag(curPuzzleState);
+            puzzleCd.attributeDrag(curDrag);
+        }
+
         //Update draggable tiles;
         curDrag = puzzleCd.sortDrag(curPuzzleState);
 
@@ -104,9 +114,14 @@ container.addEventListener("drop", (e)=>{
 
         curPuzzleState = puzzleCd.getPuzzleState();
 
-        curDrag = puzzleCd.sortDrag(curPuzzleState);
-
-        puzzleCd.attributeDrag(curDrag);
+        //Check if gameover
+        if(puzzleCd.gameOver(curPuzzleState,puzzleThree)){
+            showModal();
+        }
+        else{
+            curDrag = puzzleCd.sortDrag(curPuzzleState);
+            puzzleCd.attributeDrag(curDrag);
+        }
     }
 })
 
@@ -122,6 +137,12 @@ function isCorrect(solution, content) {
 //For modal
 const modal = document.getElementById("modal");
 const message = document.getElementById("message");
+const closeModal = document.getElementById("closeBtn");
+
+//event listner for hide
+closeModal.addEventListener("click",()=>{
+    hideModal();
+})
 
 function showModal() {
     message.innerText = "Winner!";
