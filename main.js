@@ -150,7 +150,7 @@ function hideGameModal() {
 
 //Event listener for closeBtn
 const closeBtn = document.getElementById("closeBtn");
-closeBtn.addEventListener("click", (e) => {
+closeBtn.addEventListener("click", () => {
     hideModal();
     hideGameModal();
 })
