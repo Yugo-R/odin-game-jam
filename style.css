@@ -137,6 +137,33 @@ body{
     width: 100px;
 }
 
+/* ---------- Game Modal Settings ---------- */
+#gameModal {
+    margin-top: 64px;
+    height: 500px;
+    width: 700px;
+    background: #385cc5;
+    border: 5px solid #66ffff;
+}
+
+#rules {
+    color: #fff;
+    font-size: 50px;
+}
+
+#gameModal ul {
+    margin-top: 65px;
+}
+
+#gameModal ul li {
+    margin: 20px 0 50px 0;
+    font-size: 40px;
+}
+
+#gameModal a:hover {
+    color: #fff;
+}
+
 /* ---------- Modal Settings ---------- */
 #modal {
     margin-top: 64px;
