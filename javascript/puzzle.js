@@ -127,10 +127,18 @@ export let puzzle = ()=>{
                    arr.push("empty");
                }
                else{
-                   arr.push(li[i].innerHTML);
+                   !li[i].style.backgroundPosition? arr.push(li[i].innerHTML):arr.push(li[i].style.backgroundPosition);
                }
            }
            return arr;
+        },
+        gameOver:(curArray, templArray)=>{
+            for(let i =0; i < curArray.length; i++){
+                if(curArray[i] != templArray[i]){
+                    return false;
+                }
+            }
+            return true
         }
 
     }

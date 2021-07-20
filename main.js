@@ -23,18 +23,9 @@ let puzzleCd = puzzle();
 
 // When the page load
 window.addEventListener('load',()=>{
-    //variable that will keep track of puzzle state
-    curPuzzleState = puzzleOne;
-    //shuffle puzzle(shuffle the array)
-    puzzleCd.shufflePuzzle(curPuzzleState);
-    //Create puzzle
-    puzzleCd.createPuzzle(puzzleOne);
-    //Resize container
-    puzzleCd.resizePuzzleContainer(3);
-    //Sort draggable Tiles
-    curDrag = puzzleCd.sortDrag(curPuzzleState);
-    //Attribute draggable status to respective tiles
-    puzzleCd.attributeDrag(curDrag);
+    createPzl(3,puzzleOne);
+    // hideBtn();
+    // showModal();
 });
 
 //Event listener on the navbar
@@ -42,38 +33,37 @@ nav.addEventListener('click',(e)=>{
     let btnId = e.target.id;
     switch(btnId){
         case "puzzle1":
-            //reset puzzle container
-            puzzleCd.resetPuzzle();
-            curPuzzleState = puzzleOne;
-            puzzleCd.shufflePuzzle(curPuzzleState);
-            puzzleCd.createPuzzle(puzzleOne);
-            puzzleCd.resizePuzzleContainer(3);
-            curDrag = puzzleCd.sortDrag(curPuzzleState);
-            puzzleCd.attributeDrag(curDrag);
+            createPzl(3,puzzleOne);
             hideBtn();
             break;
         case "puzzle2":
-            puzzleCd.resetPuzzle();
-            curPuzzleState = puzzleTwo;
-            puzzleCd.shufflePuzzle(curPuzzleState);
-            puzzleCd.createPuzzle(puzzleTwo);
-            puzzleCd.resizePuzzleContainer(4);
-            curDrag = puzzleCd.sortDrag(curPuzzleState);
-            puzzleCd.attributeDrag(curDrag);
+            createPzl(4,puzzleTwo);
             hideBtn();
             break;
         case "puzzle3":
-            puzzleCd.resetPuzzle();
-            curPuzzleState = puzzleThree;
-            puzzleCd.shufflePuzzle(curPuzzleState);
-            puzzleCd.createImgPuzzle(puzzleThree,puzzleCd.selectImg());
-            puzzleCd.resizePuzzleContainer(3);
-            curDrag = puzzleCd.sortDrag(curPuzzleState);
-            puzzleCd.attributeDrag(curDrag);
+            createPzl(3,puzzleThree);
             showBtn();
             break;
     }
 })
+
+// gridNum is the number of column to be displayed, puzzleNum is the name of the specific puzzle
+function createPzl(gridNum,puzzleNum){
+    //Reset Puzzle
+    puzzleCd.resetPuzzle();
+    //variable that will keep track of puzzle state
+    curPuzzleState = [...puzzleNum];
+    //shuffle puzzle(shuffle the array)
+    puzzleCd.shufflePuzzle(curPuzzleState);
+    //Create puzzle
+    puzzleNum != puzzleThree? puzzleCd.createPuzzle(curPuzzleState):puzzleCd.createImgPuzzle(curPuzzleState, puzzleCd.selectImg());
+    //Resize container
+    puzzleCd.resizePuzzleContainer(gridNum);
+    //Sort draggable Tiles
+    curDrag = puzzleCd.sortDrag(curPuzzleState);
+    //Attribute draggable status to respective tiles
+    puzzleCd.attributeDrag(curDrag);
+}
 
 //disable the default behavior of the browser when dragging
 document.addEventListener("dragover", (e)=>{
@@ -99,6 +89,15 @@ container.addEventListener("drop", (e)=>{
         //Update puzzle array
         curPuzzleState = puzzleCd.getPuzzleState();
 
+        //Check if gameover
+        if(puzzleCd.gameOver(curPuzzleState,puzzleOne)){
+            showModal();
+        }
+        else{
+            curDrag = puzzleCd.sortDrag(curPuzzleState);
+            puzzleCd.attributeDrag(curDrag);
+        }
+
         //Update draggable tiles;
         curDrag = puzzleCd.sortDrag(curPuzzleState);
 
@@ -115,9 +114,14 @@ container.addEventListener("drop", (e)=>{
 
         curPuzzleState = puzzleCd.getPuzzleState();
 
-        curDrag = puzzleCd.sortDrag(curPuzzleState);
-
-        puzzleCd.attributeDrag(curDrag);
+        //Check if gameover
+        if(puzzleCd.gameOver(curPuzzleState,puzzleThree)){
+            showModal();
+        }
+        else{
+            curDrag = puzzleCd.sortDrag(curPuzzleState);
+            puzzleCd.attributeDrag(curDrag);
+        }
     }
 })
 
@@ -134,6 +138,12 @@ function isCorrect(solution, content) {
 gameModal = document.getElementById("gameModal");
 const modal = document.getElementById("modal");
 const message = document.getElementById("message");
+const closeModal = document.getElementById("closeBtn");
+
+//event listner for hide
+closeModal.addEventListener("click",()=>{
+    hideModal();
+})
 
 function showModal() {
     message.innerText = "Winner!";
