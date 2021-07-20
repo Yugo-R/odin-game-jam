@@ -159,7 +159,7 @@ gameModal.addEventListener('click',(e)=>{
             curDrag = puzzleCd.sortDrag(curPuzzleState);
             puzzleCd.attributeDrag(curDrag);
             hideBtn();
-            hideGameModal();
+            hideModal();
             break;
         case "puzzle2":
             puzzleCd.resetPuzzle();
@@ -170,7 +170,7 @@ gameModal.addEventListener('click',(e)=>{
             curDrag = puzzleCd.sortDrag(curPuzzleState);
             puzzleCd.attributeDrag(curDrag);
             hideBtn();
-            hideGameModal();
+            hideModal();
             break;
         case "puzzle3":
             puzzleCd.resetPuzzle();
@@ -181,7 +181,7 @@ gameModal.addEventListener('click',(e)=>{
             curDrag = puzzleCd.sortDrag(curPuzzleState);
             puzzleCd.attributeDrag(curDrag);
             showBtn();
-            hideGameModal();
+            hideModal();
             break;
     }
 })
