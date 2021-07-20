@@ -1,6 +1,6 @@
 export let puzzle = ()=>{
     const container = document.querySelector('#container');
-    const imageArray = ["../images/benjamin-suter-vXHFjQyWuMo-unsplash.jpg", "../images/david-becker-dMeEJRE18VI-unsplash.jpg", "../images/nick-fewings-y-xqEZPA6KQ-unsplash.jpg", "../images/daniels-joffe-wWTow3BNoCs-unsplash.jpg", "../images/erik-mclean-OQgpRHFJwbQ-unsplash.jpg", "../images/kyaw-tun-ECvYbWrTPNU-unsplash.jpg", "../images/brandon-nelson-2smDZopBMso-unsplash.jpg", "../images/luis-mejicanos-aaqBs1zDeyA-unsplash.jpg", "../images/reno-laithienne-CwJP_8mKvTo-unsplash.jpg"];
+    const imageArray = ["../images/kyaw-tun-ECvYbWrTPNU-unsplash.jpg", "../images/nick-fewings-y-xqEZPA6KQ-unsplash.jpg","../images/daniels-joffe-wWTow3BNoCs-unsplash.jpg","../images/david-becker-dMeEJRE18VI-unsplash.jpg", "../images/benjamin-suter-vXHFjQyWuMo-unsplash.jpg", "../images/erik-mclean-OQgpRHFJwbQ-unsplash.jpg", "../images/brandon-nelson-2smDZopBMso-unsplash.jpg", "../images/luis-mejicanos-aaqBs1zDeyA-unsplash.jpg", "../images/reno-laithienne-CwJP_8mKvTo-unsplash.jpg"];
     return {
         //NEED REVISING
         createPuzzle: (puzzle)=>{
@@ -127,10 +127,18 @@ export let puzzle = ()=>{
                    arr.push("empty");
                }
                else{
-                   arr.push(li[i].innerHTML);
+                   !li[i].style.backgroundPosition? arr.push(li[i].innerHTML):arr.push(li[i].style.backgroundPosition);
                }
            }
            return arr;
+        },
+        gameOver:(curArray, templArray)=>{
+            for(let i =0; i < curArray.length; i++){
+                if(curArray[i] != templArray[i]){
+                    return false;
+                }
+            }
+            return true
         }
 
     }
