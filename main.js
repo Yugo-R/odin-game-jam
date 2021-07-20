@@ -142,18 +142,8 @@ function showModal() {
 
 function hideModal() {
     modal.classList.add("hide");
-}
-
-function hideGameModal() {
     gameModal.classList.add("hide");
 }
-
-//Event listener for closeBtn
-const closeBtn = document.getElementById("closeBtn");
-closeBtn.addEventListener("click", () => {
-    hideModal();
-    hideGameModal();
-})
 
 //Event listener on the gameModal
 gameModal.addEventListener('click',(e)=>{
