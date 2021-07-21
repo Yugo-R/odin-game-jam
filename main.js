@@ -134,7 +134,10 @@ function isCorrect(solution, content) {
 gameModal = document.getElementById("gameModal");
 const modal = document.getElementById("modal");
 const message = document.getElementById("message");
-
+const closeBtn = document.getElementById("closeBtn");
+closeBtn.addEventListener("click", () => {
+    hideModal();
+})
 function showModal() {
     message.innerText = "Winner!";
     modal.classList.remove("hide");    
