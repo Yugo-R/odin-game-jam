@@ -19,6 +19,9 @@ export let puzzle = ()=>{
         },
         //NEED REVISING
         createImgPuzzle:(puzzle, img)=>{
+            if(!img){
+                img = imageArray[0];
+            }
             for(let i=0; i<puzzle.length; i++){
                 if(puzzle[i] == "empty"){
                     let empty = document.createElement('li');
@@ -33,10 +36,6 @@ export let puzzle = ()=>{
                     container.appendChild(li);
                 }
             }
-        },
-        //NEED REVISING
-        selectImg:()=>{
-            return imageArray[0];
         },
         shufflePuzzle:(puzzle)=>{
             //Fisher Yates algorithm to shuffle array
@@ -139,8 +138,25 @@ export let puzzle = ()=>{
                 }
             }
             return true
-        }
-
+        },
+        getNextImg:(currentImg)=>{
+            let imgIndex = imageArray.indexOf(currentImg)
+            if(imgIndex == -1 || imgIndex == imageArray.length - 1){
+                return imageArray[0];
+            }
+            else{
+                return imageArray[imgIndex + 1];
+            }
+        },
+        getPrevImg:(currentImg)=>{
+            let imgIndex = imageArray.indexOf(currentImg)
+            if(imgIndex == -1 || imgIndex == 0){
+                return imageArray[imageArray.length - 1];
+            }
+            else{
+                return imageArray[imgIndex - 1];
+            }
+        },
     }
 
 }
