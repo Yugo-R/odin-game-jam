@@ -135,6 +135,7 @@ function isCorrect(solution, content) {
 }
 
 //For modal
+gameModal = document.getElementById("gameModal");
 const modal = document.getElementById("modal");
 const message = document.getElementById("message");
 const closeModal = document.getElementById("closeBtn");
@@ -151,17 +152,59 @@ function showModal() {
 
 function hideModal() {
     modal.classList.add("hide");
+    gameModal.classList.add("hide");
 }
+
+//Event listener on the gameModal
+gameModal.addEventListener('click',(e)=>{
+    let btnId = e.target.id;
+    switch(btnId){
+        case "puzzle1":
+            //reset puzzle container
+            puzzleCd.resetPuzzle();
+            curPuzzleState = puzzleOne;
+            puzzleCd.shufflePuzzle(curPuzzleState);
+            puzzleCd.createPuzzle(puzzleOne);
+            puzzleCd.resizePuzzleContainer(3);
+            curDrag = puzzleCd.sortDrag(curPuzzleState);
+            puzzleCd.attributeDrag(curDrag);
+            hideBtn();
+            hideModal();
+            break;
+        case "puzzle2":
+            puzzleCd.resetPuzzle();
+            curPuzzleState = puzzleTwo;
+            puzzleCd.shufflePuzzle(curPuzzleState);
+            puzzleCd.createPuzzle(puzzleTwo);
+            puzzleCd.resizePuzzleContainer(4);
+            curDrag = puzzleCd.sortDrag(curPuzzleState);
+            puzzleCd.attributeDrag(curDrag);
+            hideBtn();
+            hideModal();
+            break;
+        case "puzzle3":
+            puzzleCd.resetPuzzle();
+            curPuzzleState = puzzleThree;
+            puzzleCd.shufflePuzzle(curPuzzleState);
+            puzzleCd.createImgPuzzle(puzzleThree,puzzleCd.selectImg());
+            puzzleCd.resizePuzzleContainer(3);
+            curDrag = puzzleCd.sortDrag(curPuzzleState);
+            puzzleCd.attributeDrag(curDrag);
+            showBtn();
+            hideModal();
+            break;
+    }
+})
 
 //For changeImg Buttons
 const prevImg = document.getElementById("prevImg");
 const nextImg = document.getElementById("nextImg");
-const imageArray = ["../images/benjamin-suter-vXHFjQyWuMo-unsplash.jpg", 
+const imageArray = ["../images/brian-mcgowan-NAJa5rRgwDE-unsplash.jpg", 
 "../images/david-becker-dMeEJRE18VI-unsplash.jpg", 
 "../images/nick-fewings-y-xqEZPA6KQ-unsplash.jpg", 
 "../images/daniels-joffe-wWTow3BNoCs-unsplash.jpg", 
 "../images/erik-mclean-OQgpRHFJwbQ-unsplash.jpg", 
-"../images/kyaw-tun-ECvYbWrTPNU-unsplash.jpg", 
+"../images/sasha-stories-r5sWUXSgEfg-unsplash.jpg", 
 "../images/brandon-nelson-2smDZopBMso-unsplash.jpg", 
 "../images/luis-mejicanos-aaqBs1zDeyA-unsplash.jpg", 
 "../images/reno-laithienne-CwJP_8mKvTo-unsplash.jpg"];
