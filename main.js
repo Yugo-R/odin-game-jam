@@ -159,7 +159,7 @@ function hideModal() {
 gameModal.addEventListener('click', () =>{
     createPzl();
     }
-})
+)
 
 //For changeImg Buttons
 const prevImg = document.getElementById("prevImg");
