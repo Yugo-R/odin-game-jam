@@ -156,43 +156,8 @@ function hideModal() {
 }
 
 //Event listener on the gameModal
-gameModal.addEventListener('click',(e)=>{
-    let btnId = e.target.id;
-    switch(btnId){
-        case "puzzle1":
-            //reset puzzle container
-            puzzleCd.resetPuzzle();
-            curPuzzleState = puzzleOne;
-            puzzleCd.shufflePuzzle(curPuzzleState);
-            puzzleCd.createPuzzle(puzzleOne);
-            puzzleCd.resizePuzzleContainer(3);
-            curDrag = puzzleCd.sortDrag(curPuzzleState);
-            puzzleCd.attributeDrag(curDrag);
-            hideBtn();
-            hideModal();
-            break;
-        case "puzzle2":
-            puzzleCd.resetPuzzle();
-            curPuzzleState = puzzleTwo;
-            puzzleCd.shufflePuzzle(curPuzzleState);
-            puzzleCd.createPuzzle(puzzleTwo);
-            puzzleCd.resizePuzzleContainer(4);
-            curDrag = puzzleCd.sortDrag(curPuzzleState);
-            puzzleCd.attributeDrag(curDrag);
-            hideBtn();
-            hideModal();
-            break;
-        case "puzzle3":
-            puzzleCd.resetPuzzle();
-            curPuzzleState = puzzleThree;
-            puzzleCd.shufflePuzzle(curPuzzleState);
-            puzzleCd.createImgPuzzle(puzzleThree,puzzleCd.selectImg());
-            puzzleCd.resizePuzzleContainer(3);
-            curDrag = puzzleCd.sortDrag(curPuzzleState);
-            puzzleCd.attributeDrag(curDrag);
-            showBtn();
-            hideModal();
-            break;
+gameModal.addEventListener('click', () =>{
+    createPzl();
     }
 })
 
