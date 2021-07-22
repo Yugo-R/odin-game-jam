@@ -34,7 +34,7 @@ let puzzleCd = puzzle();
 window.addEventListener('load',()=>{
     createPzl(3,puzzlePos);
     showBtn();
-    gameModal.classList.add('hide');
+    // gameModal.classList.add('hide');
     // hideBtn();
     // showModal();
 });
@@ -118,6 +118,76 @@ function isCorrect(solution, content) {
     }
 }
 
+// Make intro buttons generate puzzle imgs
+const firstImg = document.getElementById("displayImg1");
+const secondImg = document.getElementById("displayImg2");
+const thirdImg = document.getElementById("displayImg3");
+const fourthImg = document.getElementById("displayImg4");
+const fifthImg = document.getElementById("displayImg5");
+const sixthImg = document.getElementById("displayImg6");
+const seventhImg = document.getElementById("displayImg7");
+const eighthImg = document.getElementById("displayImg8");
+const ninthImg = document.getElementById("displayImg9");
+const start = document.getElementById("start");
+
+start.addEventListener("click", function() {
+    hideModal();
+})
+
+firstImg.addEventListener("click", function () {
+    curImg = puzzleCd.getEpcot(curImg);
+    createPzl(3,puzzlePos);
+    console.log("First Image");
+})
+
+secondImg.addEventListener("click", function () {
+    curImg = puzzleCd.getBuilding(curImg);
+    createPzl(3,puzzlePos);
+    console.log("Second Image");
+})
+
+thirdImg.addEventListener("click", function () {
+    curImg = puzzleCd.getStairs(curImg);
+    createPzl(3,puzzlePos);
+    console.log("Third Image");
+})
+
+fourthImg.addEventListener("click", function () {
+    curImg = puzzleCd.getPoseidon(curImg);
+    createPzl(3,puzzlePos);
+    console.log("Fourth Image");
+})
+
+fifthImg.addEventListener("click", function () {
+    curImg = puzzleCd.getComic(curImg);
+    createPzl(3,puzzlePos);
+    console.log("Fifth Image");
+})
+
+sixthImg.addEventListener("click", function () {
+    curImg = puzzleCd.getJellyfish(curImg);
+    createPzl(3,puzzlePos);
+    console.log("Sixth Image");
+})
+
+seventhImg.addEventListener("click", function () {
+    curImg = puzzleCd.getSnake(curImg);
+    createPzl(3,puzzlePos);
+    console.log("Seventh Image");
+})
+
+eighthImg.addEventListener("click", function () {
+    curImg = puzzleCd.getStreet(curImg);
+    createPzl(3,puzzlePos);
+    console.log("Eighth Image");
+})
+
+ninthImg.addEventListener("click", function () {
+    curImg = puzzleCd.getTemple(curImg);
+    createPzl(3,puzzlePos);
+    console.log("Ninth Image");
+})
+
 //event listner for hide
 closeModal.addEventListener("click",()=>{
     hideModal();
@@ -134,10 +204,10 @@ function hideModal() {
 }
 
 //Event listener on the gameModal
-gameModal.addEventListener('click', () =>{
-    createPzl();
-    }
-)
+//gameModal.addEventListener('click', () =>{
+    //createPzl();
+//})
+
 
 //For changeImg Buttons
 // const prevImg = document.getElementById("prevImg");

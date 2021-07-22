@@ -23,8 +23,7 @@ body{
 .navbar {
     width: 100%;
     height: 70px;
-    background: #385cc5;
-    opacity: 0.8;
+    background: #5c62a3;
 }
 
 /* Need to change */
@@ -136,14 +135,21 @@ body{
     height: 40px;
     width: 100px;
 }
-
+/*
+- Gamemodal need to take the whole page
+- selection title for difficulty : easy (3x3 grid), medium(4x4grid), hard(5x5grid) 
+- add a start button
+- display all the img in grid where the player can select them and the game starts with the selected img.
+*/
 /* ---------- Game Modal Settings ---------- */
 #gameModal {
-    margin-top: 64px;
-    height: 500px;
-    width: 700px;
+    position: relative;
+    top: -98px;
+    height: 892px;
+    width: 1775px;
     background: #385cc5;
     border: 5px solid #66ffff;
+    opacity: 0.9;
 }
 
 #rules {
@@ -152,7 +158,11 @@ body{
 }
 
 #gameModal ul {
-    margin-top: 65px;
+    margin: 65px auto;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #gameModal ul li {
@@ -162,6 +172,24 @@ body{
 
 #gameModal a:hover {
     color: #fff;
+}
+
+#start {
+    padding: 10px;
+    width: 150px;
+    height: 52px;
+    font-size: 30px;
+    color: #66ffff;
+    background: none;
+    text-decoration: none;
+    border: 1px solid #66ffff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#start:hover {
+    color: #fff;
+    border-color: #fff;
 }
 
 /* ---------- Modal Settings ---------- */
