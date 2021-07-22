@@ -196,15 +196,25 @@ body{
 }
 
 /* ---------- Modal Settings ---------- */
+#modal-wrap {
+    max-width: 750px;
+    padding: 1rem;
+    position: relative;
+    background: linear-gradient(to right, red, orange);
+    padding: 5px;
+    margin-top: 180px;
+    border-radius: 5px;
+}
+
 #modal {
-    margin-top: 64px;
-    height: 250px;
+    height: 220px;
     width: 700px;
-    background: #385cc5;
-    border: 5px solid #66ffff;
+    background: #222;
+    border-radius: 3px;
 }
 
 #header {
+    color: #fff;
     text-align: left;
 }
 
@@ -216,9 +226,16 @@ body{
     cursor: pointer;
 }
 
+#closeWinBtn {
+    color: #fff;
+    margin: 0px 5px 5px 15px;
+    font-size: 50px;
+    background: none;
+    cursor: pointer;
+}
+
 #message {
-    color: #66ffff;
-    margin-top: 20px;
+    color: #fff;
     font-size: 100px;
 }
 
