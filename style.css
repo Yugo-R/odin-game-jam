@@ -143,8 +143,7 @@ body{
 */
 /* ---------- Game Modal Settings ---------- */
 #gameModal {
-    position: relative;
-    top: -98px;
+    margin-top: -98px;
     height: 892px;
     width: 1775px;
     background: #385cc5;
@@ -171,6 +170,10 @@ body{
 }
 
 #gameModal a:hover {
+    color: #fff;
+}
+
+#gameModal a:focus {
     color: #fff;
 }
 
