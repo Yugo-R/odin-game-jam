@@ -11,9 +11,10 @@ let puzzlePos = ["left top","center top","right top","left center","center cente
 
 //For modal
 const gameModal = document.getElementById("gameModal");
-const modal = document.getElementById("modal");
+const modal = document.getElementById("modal-wrap");
 const message = document.getElementById("message");
 const closeModal = document.getElementById("closeBtn");
+const closeWinModal = document.getElementById("closeWinBtn");
 
 //Track the current puzzle state
 let curPuzzleState;
@@ -190,6 +191,9 @@ ninthImg.addEventListener("click", function () {
 
 //event listner for hide
 closeModal.addEventListener("click",()=>{
+    hideModal();
+})
+closeWinModal.addEventListener("click", ()=>{
     hideModal();
 })
 
