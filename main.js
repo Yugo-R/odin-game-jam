@@ -250,3 +250,12 @@ prevImg.addEventListener("click", function () {
     curImg = puzzleCd.getPrevImg(curImg);
     createPzl(3,puzzlePos);
 });
+
+const medium = document.getElementById("puzzle2");
+const hard = document.getElementById("puzzle3");
+medium.addEventListener("click", function() {
+    puzzleCd.mediumDiff(3, puzzlePos);
+})
+hard.addEventListener("click", function() {
+    puzzleCd.hardDiff(3, puzzlePos);
+})
