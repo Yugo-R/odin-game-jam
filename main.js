@@ -10,7 +10,7 @@ const container = document.querySelector('#container');
 let puzzlePos = ["left top","center top","right top","left center","center center","right center","left bottom","center bottom", "empty"];
 
 //For modal
-const gameModal = document.getElementById("gameModal");
+const gameModal = document.getElementById("gameModal-wrap");
 const modal = document.getElementById("modal-wrap");
 const message = document.getElementById("message");
 const closeModal = document.getElementById("closeBtn");
