@@ -8,7 +8,8 @@ const container = document.querySelector('#container');
 // let puzzleOne = ["a","b","c","d","e","f","g","h","empty"];
 // let puzzleTwo = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,"empty"];
 let puzzlePos = ["left top","center top","right top","left center","center center","right center","left bottom","center bottom", "empty"];
-
+//NEEDS REVISE
+let puzzlePosMedium = ["left top","center top","center top","right top","left center","center center","center center","right center","left center","center center","center center","right center","left bottom","center bottom", "center bottom","empty"];
 //For modal
 const gameModal = document.getElementById("gameModal-wrap");
 const modal = document.getElementById("modal-wrap");
@@ -254,7 +255,12 @@ prevImg.addEventListener("click", function () {
 const medium = document.getElementById("puzzle2");
 const hard = document.getElementById("puzzle3");
 medium.addEventListener("click", function() {
-    puzzleCd.mediumDiff(3, puzzlePos);
+    puzzleCd.mediumDiff(4, puzzlePosMedium);
+    //Found out the solution to the problem with generating puzzle images.
+    //Need to make additional arrays fro 4x4 and 5x5 puzzle grids.
+    //However so far the array I made clones pieces of the background positions.
+    //NEEDS REVISE
+    createPzl(4,puzzlePosMedium);
 })
 hard.addEventListener("click", function() {
     puzzleCd.hardDiff(3, puzzlePos);
