@@ -39,12 +39,12 @@ export let puzzle = ()=>{
         },
         shufflePuzzle:(puzzle)=>{
             //Fisher Yates algorithm to shuffle array
-            for (let i = puzzle.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                const temp = puzzle[i];
-                puzzle[i] = puzzle[j];
-                puzzle[j] = temp;
-              }
+            //for (let i = puzzle.length - 1; i > 0; i--) {
+            //    const j = Math.floor(Math.random() * (i + 1));
+            //    const temp = puzzle[i];
+            //    puzzle[i] = puzzle[j];
+            //    puzzle[j] = temp;
+            //  }
         },
         resetPuzzle: ()=>{
             while(container.firstChild){
@@ -186,33 +186,20 @@ export let puzzle = ()=>{
         },
         //Get 4x4 puzzle
         //NEED REVISE
-        mediumDiff:(col, img)=>{
-            for(let i=0; i<7; i++){
-                if(col[i] == "empty"){
-                    let empty = document.createElement('li');
-                    empty.classList.add("emptyImg");
-                    container.appendChild(empty);
-                }
-                else{
-                    let li = document.createElement('li');
-                    li.style.background = `url(${img})`;
-                    li.style.backgroundPosition = col[i];
-                    li.style.backgroundSize = "650px 650px";
-                    container.appendChild(li);
-                }
-            }
+        mediumDiff:(col)=>{
             let baseCol = 4;
             let newCol = Math.abs(baseCol - col);
             let tiles = container.querySelectorAll('li');
 
             if(newCol == 0){
-                container.style.height = '500px';
-                container.style.width = '500px';
+                container.style.height = '650px';
+                container.style.width = '650px';
 
                 tiles.forEach(tile =>{
-                    tile.style.height = "32%";
-                    tile.style.width = "32%";
-                })
+                    tile.style.height = "23%";
+                    tile.style.width = "23%";
+                    tile.style.backgroundSize = "650px 650px";
+                });
             }
             else{
                 let newSize = 500 + (150*newCol);
@@ -222,7 +209,6 @@ export let puzzle = ()=>{
                 tiles.forEach(tile =>{
                     tile.style.height = `${newTileSize - 2}%`
                     tile.style.width = `${newTileSize - 2}%`;
-                    tile.style.background = `url(${img})`;
                 })
             }
         },
