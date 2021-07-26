@@ -234,12 +234,12 @@ export let puzzle = ()=>{
             let tiles = container.querySelectorAll('li');
 
             if(newCol == 0){
-                container.style.height = '500px';
-                container.style.width = '500px';
+                container.style.height = '650px';
+                container.style.width = '650px';
 
                 tiles.forEach(tile =>{
-                    tile.style.height = "32%";
-                    tile.style.width = "32%";
+                    tile.style.height = "23%";
+                    tile.style.width = "23%";
                 })
             }
             else{
