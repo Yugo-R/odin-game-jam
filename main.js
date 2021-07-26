@@ -8,9 +8,13 @@ const container = document.querySelector('#container');
 // let puzzleOne = ["a","b","c","d","e","f","g","h","empty"];
 // let puzzleTwo = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,"empty"];
 let puzzlePos = ["left top","center top","right top","left center","center center","right center","left bottom","center bottom", "empty"];
-
+//Medium Difficulty Array
+let puzzlePosMedium = ["left -6% top 0%","left 36% top 0%","right 30% top 0%","right -12% top 0%",
+"left 0% top 35%","left 28% top 35%","right 28% top 35%","right -6% top 35%",
+"left 0% top 210%","left 28% bottom 160%","right 28% bottom 160%","right -6% top 210%",
+"left 0% bottom 122%","left 31% bottom 142%", "right 31% bottom 142%","empty"];
 //For modal
-const gameModal = document.getElementById("gameModal");
+const gameModal = document.getElementById("gameModal-wrap");
 const modal = document.getElementById("modal-wrap");
 const message = document.getElementById("message");
 const closeModal = document.getElementById("closeBtn");
@@ -250,3 +254,20 @@ prevImg.addEventListener("click", function () {
     curImg = puzzleCd.getPrevImg(curImg);
     createPzl(3,puzzlePos);
 });
+
+const medium = document.getElementById("puzzle2");
+const hard = document.getElementById("puzzle3");
+medium.addEventListener("click", function() {
+    puzzleCd.mediumDiff(4, puzzlePosMedium);
+    //Found out the solution to the problem with generating puzzle images.
+    //Need to make additional arrays for 4x4 and 5x5 puzzle grids.
+    //However so far the array I made clones pieces of the background positions.
+    // Additionally need to find a way to make the background size on each li element the same as the container.
+    // For what ever reason createPzl works just fine for generating a 4x4 puzzle grid. 
+    // But hardDiff is necessary to generate a 5x5 grid.
+    //NEEDS REVISE
+    createPzl(4,puzzlePosMedium);
+})
+hard.addEventListener("click", function() {
+    puzzleCd.hardDiff(4, puzzlePos);
+})

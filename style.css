@@ -23,7 +23,7 @@ body{
 .navbar {
     width: 100%;
     height: 70px;
-    background: #5c62a3;
+    background: #222;
 }
 
 /* Need to change */
@@ -35,16 +35,22 @@ body{
 }
 
 .navbar ul li {
-    padding: 10px;
     width: 100px;
-    height: 42px;
-    border: 1px solid #66ffff;
-    border-radius: 10px;
+    height: 20px;
 }
 
 .navbar ul li a {
+    padding: 10px;
     font-size: 20px;
-    color: #66ffff;
+    color: #9198e5;
+    border: 1px solid #9198e5;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.navbar ul li a:hover {
+    color: #fff;
+    border-color: #fff;
     text-decoration: none;
 }
 
@@ -139,16 +145,24 @@ body{
 - Gamemodal need to take the whole page
 - selection title for difficulty : easy (3x3 grid), medium(4x4grid), hard(5x5grid) 
 - add a start button
+//DONE//
 - display all the img in grid where the player can select them and the game starts with the selected img.
+//DONE//
 */
 /* ---------- Game Modal Settings ---------- */
-#gameModal {
+#gameModal-wrap {
     margin-top: -98px;
-    height: 892px;
-    width: 1775px;
-    background: #385cc5;
-    border: 5px solid #66ffff;
+    height: 999px;
+    width: 1791.6px;
+    background: #222;
     opacity: 0.9;
+}
+
+#gameModal {
+    padding: 3rem;
+    border-width: 15px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, red, rgba(0,0,0,0)) 1 100%;
 }
 
 #rules {
@@ -169,6 +183,10 @@ body{
     font-size: 40px;
 }
 
+#gameModal a {
+    color: #9198e5;
+}
+
 #gameModal a:hover {
     color: #fff;
 }
@@ -182,10 +200,10 @@ body{
     width: 150px;
     height: 52px;
     font-size: 30px;
-    color: #66ffff;
+    color: #9198e5;
     background: none;
     text-decoration: none;
-    border: 1px solid #66ffff;
+    border: 1px solid #9198e5;
     border-radius: 10px;
     cursor: pointer;
 }
@@ -194,6 +212,7 @@ body{
     color: #fff;
     border-color: #fff;
 }
+
 
 /* ---------- Modal Settings ---------- */
 #modal-wrap {
@@ -220,7 +239,7 @@ body{
 
 #closeBtn {
     color: #fff;
-    margin: 0px 5px 5px 15px;
+    margin: -100px 5px 5px 5px;
     font-size: 50px;
     background: none;
     cursor: pointer;
