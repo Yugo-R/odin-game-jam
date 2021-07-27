@@ -9,11 +9,10 @@ const container = document.querySelector('#container');
 // let puzzleTwo = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,"empty"];
 let puzzlePos = ["left top","center top","right top","left center","center center","right center","left bottom","center bottom", "empty"];
 //Medium Difficulty Array
-// May need an array for every background image. This array is fine for EPCOT but looks off for other pictures.
-let puzzlePosMedium = ["left 8% top 0%","left 39% top 0%","right 34% top 0%","right 4% top 0%",
-"left 8% top 30%","left 34% top 32%","right 34% top 32%","right 4% top 30%",
-"left 8% top 180%","left 34% bottom 160%","right 34% bottom 160%","right 2% top 200%",
-"left 7% bottom 142%","left 36% bottom 142%", "right 36% bottom 142%","empty"];
+let puzzlePosMedium = ["left 7% top 0%","left 37% top 0%","right 33% top 0%","right 3% top 0%",
+"left 6% top 35%","left 37% top 35%","right 33% top 35%","right 2% top 35%",
+"left 6% bottom 160%","left 37% bottom 160%","right 33% bottom 160%","right 2% bottom 160%",
+"left 7% bottom 130%","left 37% bottom 130%", "right 33% bottom 130%","empty"];
 //For modal
 const gameModal = document.getElementById("gameModal-wrap");
 const modal = document.getElementById("modal-wrap");
@@ -118,7 +117,7 @@ function createHard(gridNum,puzzleNum){
     curDrag = puzzleCd.sortDrag(curPuzzleState);
     //Attribute draggable status to respective tiles
     puzzleCd.attributeDrag(curDrag);
-    //Create medium puzzle
+    //Create hard puzzle
     puzzleCd.hardDiff(gridNum, puzzleNum);
 }
 
@@ -302,7 +301,7 @@ const hard = document.getElementById("puzzle3");
 easy.addEventListener("click", function() {
     createPzl(3,puzzlePos);
 })
-medium.addEventListener("click", function() {
+medium.addEventListener("click", function(event) {
     //Found out the solution to the problem with generating puzzle images.
     //Need to make additional arrays for 4x4 and 5x5 puzzle grids.
     //However so far the array I made clones pieces of the background positions.
