@@ -14,10 +14,11 @@ let puzzlePosMedium = ["left 7% top 0%","left 37% top 0%","right 33% top 0%","ri
 "left 6% bottom 160%","left 37% bottom 160%","right 33% bottom 160%","right 2% bottom 160%",
 "left 6% bottom 130%","left 37% bottom 130%", "right 33% bottom 130%","empty"];
 //Hard Difficulty Array
-let puzzlePosHard = ["left 8% top 0%","left 30% top 0%","center top 0%","right 33% top 0%","right 10% top 0%","right 3% top 0%",
-"left 6% top 35%","left 37% top 35%","left 37% top 35%","right 33% top 35%","right 33% top 35%","right 2% top 35%",
-"left 6% bottom 160%","left 37% bottom 160%", "left 37% bottom 160%","right 33% bottom 160%","right 33% bottom 160%","right 2% bottom 160%",
-"left 6% bottom 130%","left 37% bottom 130%","left 37% bottom 130%","right 33% bottom 130%","right 33% bottom 130%","right 33% bottom 130%","empty"];
+let puzzlePosHard = ["left 3% top 4%","left 27% top 4%","left 50% top 4%","right 27% top 4%","right 3% top 4%",
+"left 2% top 30%","left 27% top 30%","left 50% top 30%","right 27% top 30%","right 3% top 30%",
+"left 2% top 55%","left 27% top 55%","left 50% top 55%","right 27% top 55%", "right 3% top 55%",
+"left 2% bottom 144%","left 27% bottom 144%","left 50% bottom 144%","right 27% bottom 144%","right 3% bottom 144%",
+"left 2% bottom 122%","left 27% bottom 122%","left 50% bottom 122%","right 27% bottom 122%","empty"];
 //For modal
 const gameModal = document.getElementById("gameModal-wrap");
 const modal = document.getElementById("modal-wrap");

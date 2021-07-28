@@ -39,12 +39,12 @@ export let puzzle = ()=>{
         },
         shufflePuzzle:(puzzle)=>{
             //Fisher Yates algorithm to shuffle array
-            //for (let i = puzzle.length - 1; i > 0; i--) {
-            //    const j = Math.floor(Math.random() * (i + 1));
-            //    const temp = puzzle[i];
-            //    puzzle[i] = puzzle[j];
-            //    puzzle[j] = temp;
-            //  }
+            for (let i = puzzle.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                const temp = puzzle[i];
+                puzzle[i] = puzzle[j];
+                puzzle[j] = temp;
+              }
         },
         resetPuzzle: ()=>{
             while(container.firstChild){
