@@ -9,10 +9,10 @@ const container = document.querySelector('#container');
 // let puzzleTwo = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,"empty"];
 let puzzlePos = ["left top","center top","right top","left center","center center","right center","left bottom","center bottom", "empty"];
 //Medium Difficulty Array
-let puzzlePosMedium = ["left -6% top 0%","left 36% top 0%","right 30% top 0%","right -12% top 0%",
-"left 0% top 35%","left 28% top 35%","right 28% top 35%","right -6% top 35%",
-"left 0% top 210%","left 28% bottom 160%","right 28% bottom 160%","right -6% top 210%",
-"left 0% bottom 122%","left 31% bottom 142%", "right 31% bottom 142%","empty"];
+let puzzlePosMedium = ["left 7% top 0%","left 37% top 0%","right 33% top 0%","right 3% top 0%",
+"left 6% top 35%","left 37% top 35%","right 33% top 35%","right 2% top 35%",
+"left 6% bottom 160%","left 37% bottom 160%","right 33% bottom 160%","right 2% bottom 160%",
+"left 7% bottom 130%","left 37% bottom 130%", "right 33% bottom 130%","empty"];
 //For modal
 const gameModal = document.getElementById("gameModal-wrap");
 const modal = document.getElementById("modal-wrap");
@@ -79,6 +79,46 @@ function createPzl(gridNum,puzzleNum){
     curDrag = puzzleCd.sortDrag(curPuzzleState);
     //Attribute draggable status to respective tiles
     puzzleCd.attributeDrag(curDrag);
+}
+
+// Create medium difficulty puzzle based on the same rules as createPzl()
+function createMedium(gridNum,puzzleNum){
+    //Reset Puzzle
+    puzzleCd.resetPuzzle();
+    //variable that will keep track of puzzle state
+    curPuzzleState = [...puzzleNum];
+    //shuffle puzzle(shuffle the array)
+    puzzleCd.shufflePuzzle(curPuzzleState);
+    //Create puzzle
+    puzzleCd.createImgPuzzle(curPuzzleState, curImg);
+    //Resize container
+    puzzleCd.resizePuzzleContainer(gridNum);
+    //Sort draggable Tiles
+    curDrag = puzzleCd.sortDrag(curPuzzleState);
+    //Attribute draggable status to respective tiles
+    puzzleCd.attributeDrag(curDrag);
+    //Create medium puzzle
+    puzzleCd.mediumDiff(gridNum, puzzleNum);
+}
+
+// Create hard difficulty puzzle based on the same rules as createPzl()
+function createHard(gridNum,puzzleNum){
+    //Reset Puzzle
+    puzzleCd.resetPuzzle();
+    //variable that will keep track of puzzle state
+    curPuzzleState = [...puzzleNum];
+    //shuffle puzzle(shuffle the array)
+    puzzleCd.shufflePuzzle(curPuzzleState);
+    //Create puzzle
+    puzzleCd.createImgPuzzle(curPuzzleState, curImg);
+    //Resize container
+    puzzleCd.resizePuzzleContainer(gridNum);
+    //Sort draggable Tiles
+    curDrag = puzzleCd.sortDrag(curPuzzleState);
+    //Attribute draggable status to respective tiles
+    puzzleCd.attributeDrag(curDrag);
+    //Create hard puzzle
+    puzzleCd.hardDiff(gridNum, puzzleNum);
 }
 
 //disable the default behavior of the browser when dragging
@@ -255,10 +295,13 @@ prevImg.addEventListener("click", function () {
     createPzl(3,puzzlePos);
 });
 
+const easy = document.getElementById("puzzle1");
 const medium = document.getElementById("puzzle2");
 const hard = document.getElementById("puzzle3");
-medium.addEventListener("click", function() {
-    puzzleCd.mediumDiff(4, puzzlePosMedium);
+easy.addEventListener("click", function() {
+    createPzl(3,puzzlePos);
+})
+medium.addEventListener("click", function(event) {
     //Found out the solution to the problem with generating puzzle images.
     //Need to make additional arrays for 4x4 and 5x5 puzzle grids.
     //However so far the array I made clones pieces of the background positions.
@@ -266,8 +309,8 @@ medium.addEventListener("click", function() {
     // For what ever reason createPzl works just fine for generating a 4x4 puzzle grid. 
     // But hardDiff is necessary to generate a 5x5 grid.
     //NEEDS REVISE
-    createPzl(4,puzzlePosMedium);
+    createMedium(4,puzzlePosMedium);
 })
 hard.addEventListener("click", function() {
-    puzzleCd.hardDiff(4, puzzlePos);
+    createHard(6, puzzlePos);
 })
