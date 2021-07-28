@@ -214,21 +214,7 @@ export let puzzle = ()=>{
         },
         //Get 5x5 puzzle
         //NEED REVISE
-        hardDiff:(col, img)=>{
-            for(let i=0; i<16; i++){
-                if(col[i] == "empty"){
-                    let empty = document.createElement('li');
-                    empty.classList.add("emptyImg");
-                    container.appendChild(empty);
-                }
-                else{
-                    let li = document.createElement('li');
-                    li.style.background = `url(${img})`;
-                    li.style.backgroundPosition = col[i];
-                    li.style.backgroundSize = "650px 650px";
-                    container.appendChild(li);
-                }
-            }
+        hardDiff:(col)=>{
             let baseCol = 5;
             let newCol = Math.abs(baseCol - col);
             let tiles = container.querySelectorAll('li');
@@ -240,6 +226,7 @@ export let puzzle = ()=>{
                 tiles.forEach(tile =>{
                     tile.style.height = "23%";
                     tile.style.width = "23%";
+                    tile.style.backgroundSize = "650px 650px";
                 })
             }
             else{
@@ -250,6 +237,7 @@ export let puzzle = ()=>{
                 tiles.forEach(tile =>{
                     tile.style.height = `${newTileSize - 2}%`
                     tile.style.width = `${newTileSize - 2}%`;
+                    tile.style.backgroundSize = "650px 650px";
                 })
             }
         }
