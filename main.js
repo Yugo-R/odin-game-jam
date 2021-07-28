@@ -12,7 +12,12 @@ let puzzlePos = ["left top","center top","right top","left center","center cente
 let puzzlePosMedium = ["left 7% top 0%","left 37% top 0%","right 33% top 0%","right 3% top 0%",
 "left 6% top 35%","left 37% top 35%","right 33% top 35%","right 2% top 35%",
 "left 6% bottom 160%","left 37% bottom 160%","right 33% bottom 160%","right 2% bottom 160%",
-"left 7% bottom 130%","left 37% bottom 130%", "right 33% bottom 130%","empty"];
+"left 6% bottom 130%","left 37% bottom 130%", "right 33% bottom 130%","empty"];
+//Hard Difficulty Array
+let puzzlePosHard = ["left 8% top 0%","left 30% top 0%","center top 0%","right 33% top 0%","right 10% top 0%","right 3% top 0%",
+"left 6% top 35%","left 37% top 35%","left 37% top 35%","right 33% top 35%","right 33% top 35%","right 2% top 35%",
+"left 6% bottom 160%","left 37% bottom 160%", "left 37% bottom 160%","right 33% bottom 160%","right 33% bottom 160%","right 2% bottom 160%",
+"left 6% bottom 130%","left 37% bottom 130%","left 37% bottom 130%","right 33% bottom 130%","right 33% bottom 130%","right 33% bottom 130%","empty"];
 //For modal
 const gameModal = document.getElementById("gameModal-wrap");
 const modal = document.getElementById("modal-wrap");
@@ -301,16 +306,9 @@ const hard = document.getElementById("puzzle3");
 easy.addEventListener("click", function() {
     createPzl(3,puzzlePos);
 })
-medium.addEventListener("click", function(event) {
-    //Found out the solution to the problem with generating puzzle images.
-    //Need to make additional arrays for 4x4 and 5x5 puzzle grids.
-    //However so far the array I made clones pieces of the background positions.
-    // Additionally need to find a way to make the background size on each li element the same as the container.
-    // For what ever reason createPzl works just fine for generating a 4x4 puzzle grid. 
-    // But hardDiff is necessary to generate a 5x5 grid.
-    //NEEDS REVISE
-    createMedium(4,puzzlePosMedium);
+medium.addEventListener("click", function() {
+    createMedium(4, puzzlePosMedium);
 })
 hard.addEventListener("click", function() {
-    createHard(6, puzzlePos);
+    createHard(4, puzzlePosHard);
 })
