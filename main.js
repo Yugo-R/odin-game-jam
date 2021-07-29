@@ -179,6 +179,7 @@ const sixthImg = document.getElementById("displayImg6");
 const seventhImg = document.getElementById("displayImg7");
 const eighthImg = document.getElementById("displayImg8");
 const ninthImg = document.getElementById("displayImg9");
+const tenthImg = document.getElementById("displayImg10");
 const start = document.getElementById("start");
 
 start.addEventListener("click", function() {
@@ -237,6 +238,12 @@ ninthImg.addEventListener("click", function () {
     curImg = puzzleCd.getTemple(curImg);
     createPzl(3,puzzlePos);
     console.log("Ninth Image");
+})
+
+tenthImg.addEventListener("click", function () {
+    curImg = puzzleCd.getIndonesia(curImg);
+    createPzl(3,puzzlePos);
+    console.log("Tenth Image");
 })
 
 //event listner for hide
