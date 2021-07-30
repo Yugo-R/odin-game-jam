@@ -169,82 +169,96 @@ function isCorrect(solution, content) {
     }
 }
 
-// Make intro buttons generate puzzle imgs
-const firstImg = document.getElementById("displayImg1");
-const secondImg = document.getElementById("displayImg2");
-const thirdImg = document.getElementById("displayImg3");
-const fourthImg = document.getElementById("displayImg4");
-const fifthImg = document.getElementById("displayImg5");
-const sixthImg = document.getElementById("displayImg6");
-const seventhImg = document.getElementById("displayImg7");
-const eighthImg = document.getElementById("displayImg8");
-const ninthImg = document.getElementById("displayImg9");
-const tenthImg = document.getElementById("displayImg10");
 const start = document.getElementById("start");
+const gameIntro = document.querySelector(".row.imgTxt");
 
 start.addEventListener("click", function() {
     hideModal();
 })
 
-firstImg.addEventListener("click", function () {
-    curImg = puzzleCd.getEpcot(curImg);
-    createPzl(3,puzzlePos);
-    console.log("First Image");
+gameIntro.addEventListener("click", (e)=>{
+    let li = e.target.innerText.toLowerCase();
+    
+    //Filter out huge text, if innerText catch every li
+    if(li.length > 20){
+        return;
+    }
+    else{
+        curImg = puzzleCd.getImg(li)
+        createPzl(3,puzzlePos);
+    }
 })
+// Make intro buttons generate puzzle imgs
+// const firstImg = document.getElementById("displayImg1");
+// const secondImg = document.getElementById("displayImg2");
+// const thirdImg = document.getElementById("displayImg3");
+// const fourthImg = document.getElementById("displayImg4");
+// const fifthImg = document.getElementById("displayImg5");
+// const sixthImg = document.getElementById("displayImg6");
+// const seventhImg = document.getElementById("displayImg7");
+// const eighthImg = document.getElementById("displayImg8");
+// const ninthImg = document.getElementById("displayImg9");
+// const tenthImg = document.getElementById("displayImg10");
 
-secondImg.addEventListener("click", function () {
-    curImg = puzzleCd.getBuilding(curImg);
-    createPzl(3,puzzlePos);
-    console.log("Second Image");
-})
+// firstImg.addEventListener("click", function () {
+//     curImg = puzzleCd.getEpcot(curImg);
+//     createPzl(3,puzzlePos);
+//     console.log("First Image");
+// })
 
-thirdImg.addEventListener("click", function () {
-    curImg = puzzleCd.getStairs(curImg);
-    createPzl(3,puzzlePos);
-    console.log("Third Image");
-})
+// secondImg.addEventListener("click", function () {
+//     curImg = puzzleCd.getBuilding(curImg);
+//     createPzl(3,puzzlePos);
+//     console.log("Second Image");
+// })
 
-fourthImg.addEventListener("click", function () {
-    curImg = puzzleCd.getPoseidon(curImg);
-    createPzl(3,puzzlePos);
-    console.log("Fourth Image");
-})
+// thirdImg.addEventListener("click", function () {
+//     curImg = puzzleCd.getStairs(curImg);
+//     createPzl(3,puzzlePos);
+//     console.log("Third Image");
+// })
 
-fifthImg.addEventListener("click", function () {
-    curImg = puzzleCd.getComic(curImg);
-    createPzl(3,puzzlePos);
-    console.log("Fifth Image");
-})
+// fourthImg.addEventListener("click", function () {
+//     curImg = puzzleCd.getPoseidon(curImg);
+//     createPzl(3,puzzlePos);
+//     console.log("Fourth Image");
+// })
 
-sixthImg.addEventListener("click", function () {
-    curImg = puzzleCd.getJellyfish(curImg);
-    createPzl(3,puzzlePos);
-    console.log("Sixth Image");
-})
+// fifthImg.addEventListener("click", function () {
+//     curImg = puzzleCd.getComic(curImg);
+//     createPzl(3,puzzlePos);
+//     console.log("Fifth Image");
+// })
 
-seventhImg.addEventListener("click", function () {
-    curImg = puzzleCd.getSnake(curImg);
-    createPzl(3,puzzlePos);
-    console.log("Seventh Image");
-})
+// sixthImg.addEventListener("click", function () {
+//     curImg = puzzleCd.getJellyfish(curImg);
+//     createPzl(3,puzzlePos);
+//     console.log("Sixth Image");
+// })
 
-eighthImg.addEventListener("click", function () {
-    curImg = puzzleCd.getStreet(curImg);
-    createPzl(3,puzzlePos);
-    console.log("Eighth Image");
-})
+// seventhImg.addEventListener("click", function () {
+//     curImg = puzzleCd.getSnake(curImg);
+//     createPzl(3,puzzlePos);
+//     console.log("Seventh Image");
+// })
 
-ninthImg.addEventListener("click", function () {
-    curImg = puzzleCd.getTemple(curImg);
-    createPzl(3,puzzlePos);
-    console.log("Ninth Image");
-})
+// eighthImg.addEventListener("click", function () {
+//     curImg = puzzleCd.getStreet(curImg);
+//     createPzl(3,puzzlePos);
+//     console.log("Eighth Image");
+// })
 
-tenthImg.addEventListener("click", function () {
-    curImg = puzzleCd.getIndonesia(curImg);
-    createPzl(3,puzzlePos);
-    console.log("Tenth Image");
-})
+// ninthImg.addEventListener("click", function () {
+//     curImg = puzzleCd.getTemple(curImg);
+//     createPzl(3,puzzlePos);
+//     console.log("Ninth Image");
+// })
+
+// tenthImg.addEventListener("click", function () {
+//     curImg = puzzleCd.getIndonesia(curImg);
+//     createPzl(3,puzzlePos);
+//     console.log("Tenth Image");
+// })
 
 //event listner for hide
 closeModal.addEventListener("click",()=>{
