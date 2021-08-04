@@ -174,37 +174,6 @@ export let puzzle = ()=>{
                 return imgDict[img];
             }
         },
-        // getEpcot:()=>{
-        //     return imageArray[0];
-        // },
-        // getBuilding:()=>{
-        //     return imageArray[1];
-        // },
-        // getStairs:()=>{
-        //     return imageArray[2];
-        // },
-        // getPoseidon:()=>{
-        //     return imageArray[3];
-        // },
-        // getComic:()=>{
-        //     return imageArray[4];
-        // },
-        // getJellyfish:()=>{
-        //     return imageArray[5];
-        // },
-        // getSnake:()=>{
-        //     return imageArray[6];
-        // },
-        // getStreet:()=>{
-        //     return imageArray[7];
-        // },
-        // getTemple:()=>{
-        //     return imageArray[8];
-        // },
-        // getIndonesia:()=>{
-        //     return imageArray[9];
-        // },
-        //Get 4x4 puzzle
         //NEED REVISE
         mediumDiff:(col)=>{
             let baseCol = 4;

@@ -5,8 +5,6 @@ const nav = document.querySelector('.navbar');
 const container = document.querySelector('#container');
 
 //Template array for each puzzles
-// let puzzleOne = ["a","b","c","d","e","f","g","h","empty"];
-// let puzzleTwo = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,"empty"];
 let puzzlePos = ["left top","center top","right top","left center","center center","right center","left bottom","center bottom", "empty"];
 //Medium Difficulty Array
 let puzzlePosMedium = ["left 7% top 0%","left 37% top 0%","right 33% top 0%","right 3% top 0%",
@@ -45,29 +43,7 @@ let puzzleCd = puzzle();
 window.addEventListener('load',()=>{
     createPzl(3,puzzlePos);
     showBtn();
-    // gameModal.classList.add('hide');
-    // hideBtn();
-    // showModal();
 });
-
-//Event listener on the navbar OBSOLETE
-// nav.addEventListener('click',(e)=>{
-//     let btnId = e.target.id;
-//     switch(btnId){
-//         case "puzzle1":
-//             createPzl(3,puzzleOne);
-//             hideBtn();
-//             break;
-//         case "puzzle2":
-//             createPzl(4,puzzleTwo);
-//             hideBtn();
-//             break;
-//         case "puzzle3":
-//             createPzl(3,puzzleThree);
-//             showBtn();
-//             break;
-//     }
-// })
 
 // gridNum is the number of column to be displayed, puzzleNum is the name of the specific puzzle
 function createPzl(gridNum,puzzleNum){
@@ -188,77 +164,6 @@ gameIntro.addEventListener("click", (e)=>{
         createPzl(3,puzzlePos);
     }
 })
-// Make intro buttons generate puzzle imgs
-// const firstImg = document.getElementById("displayImg1");
-// const secondImg = document.getElementById("displayImg2");
-// const thirdImg = document.getElementById("displayImg3");
-// const fourthImg = document.getElementById("displayImg4");
-// const fifthImg = document.getElementById("displayImg5");
-// const sixthImg = document.getElementById("displayImg6");
-// const seventhImg = document.getElementById("displayImg7");
-// const eighthImg = document.getElementById("displayImg8");
-// const ninthImg = document.getElementById("displayImg9");
-// const tenthImg = document.getElementById("displayImg10");
-
-// firstImg.addEventListener("click", function () {
-//     curImg = puzzleCd.getEpcot(curImg);
-//     createPzl(3,puzzlePos);
-//     console.log("First Image");
-// })
-
-// secondImg.addEventListener("click", function () {
-//     curImg = puzzleCd.getBuilding(curImg);
-//     createPzl(3,puzzlePos);
-//     console.log("Second Image");
-// })
-
-// thirdImg.addEventListener("click", function () {
-//     curImg = puzzleCd.getStairs(curImg);
-//     createPzl(3,puzzlePos);
-//     console.log("Third Image");
-// })
-
-// fourthImg.addEventListener("click", function () {
-//     curImg = puzzleCd.getPoseidon(curImg);
-//     createPzl(3,puzzlePos);
-//     console.log("Fourth Image");
-// })
-
-// fifthImg.addEventListener("click", function () {
-//     curImg = puzzleCd.getComic(curImg);
-//     createPzl(3,puzzlePos);
-//     console.log("Fifth Image");
-// })
-
-// sixthImg.addEventListener("click", function () {
-//     curImg = puzzleCd.getJellyfish(curImg);
-//     createPzl(3,puzzlePos);
-//     console.log("Sixth Image");
-// })
-
-// seventhImg.addEventListener("click", function () {
-//     curImg = puzzleCd.getSnake(curImg);
-//     createPzl(3,puzzlePos);
-//     console.log("Seventh Image");
-// })
-
-// eighthImg.addEventListener("click", function () {
-//     curImg = puzzleCd.getStreet(curImg);
-//     createPzl(3,puzzlePos);
-//     console.log("Eighth Image");
-// })
-
-// ninthImg.addEventListener("click", function () {
-//     curImg = puzzleCd.getTemple(curImg);
-//     createPzl(3,puzzlePos);
-//     console.log("Ninth Image");
-// })
-
-// tenthImg.addEventListener("click", function () {
-//     curImg = puzzleCd.getIndonesia(curImg);
-//     createPzl(3,puzzlePos);
-//     console.log("Tenth Image");
-// })
 
 //event listner for hide
 closeModal.addEventListener("click",()=>{
@@ -277,25 +182,6 @@ function hideModal() {
     modal.classList.add("hide");
     gameModal.classList.add("hide");
 }
-
-//Event listener on the gameModal
-//gameModal.addEventListener('click', () =>{
-    //createPzl();
-//})
-
-
-//For changeImg Buttons
-// const prevImg = document.getElementById("prevImg");
-// const nextImg = document.getElementById("nextImg");
-// const imageArray = ["../images/brian-mcgowan-NAJa5rRgwDE-unsplash.jpg", 
-// "../images/david-becker-dMeEJRE18VI-unsplash.jpg", 
-// "../images/nick-fewings-y-xqEZPA6KQ-unsplash.jpg", 
-// "../images/daniels-joffe-wWTow3BNoCs-unsplash.jpg", 
-// "../images/erik-mclean-OQgpRHFJwbQ-unsplash.jpg", 
-// "../images/sasha-stories-r5sWUXSgEfg-unsplash.jpg", 
-// "../images/brandon-nelson-2smDZopBMso-unsplash.jpg", 
-// "../images/luis-mejicanos-aaqBs1zDeyA-unsplash.jpg", 
-// "../images/reno-laithienne-CwJP_8mKvTo-unsplash.jpg"];
 
 //Show buttons when puzzle3 is active
 function showBtn() {
