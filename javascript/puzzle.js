@@ -123,11 +123,11 @@ export let puzzle = ()=>{
             //reset draggable tiles
             tiles.forEach(tile =>{
                 tile.removeAttribute("draggable");
+                tile.style.cursor = "grab"
             })
-            
             for(let j =0; j < tilesPos.length; j++){
-            //    tiles[tilesPos[j]].style.backgroundColor = "red";
                tiles[tilesPos[j]].setAttribute("draggable", true);
+               tiles[tilesPos[j]].style.cursor = "pointer"
             }
         },
         getPuzzleState:()=>{
