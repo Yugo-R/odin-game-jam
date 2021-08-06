@@ -39,9 +39,13 @@ let srcTile;
 //Call factory function on puzzleCommand variable
 let puzzleCd = puzzle();
 
+//Track current difficulty
+let curDif;
+
 // When the page load
 window.addEventListener('load',()=>{
     createPzl(3,puzzlePos);
+    curDif = 'easy';
     showBtn();
 });
 
@@ -109,12 +113,15 @@ nav.addEventListener("click",(e)=>{
     switch(target){
         case 'puzzle1':
             createPzl(3,puzzlePos);
+            curDif = 'easy';
             break;
         case 'puzzle2':
             createMedium(4, puzzlePosMedium);
+            curDif = 'medium';
             break;
         case 'puzzle3':
             createHard(4, puzzlePosHard);
+            curDif = 'hard';
             break;
         case 'select-image':
             console.log(target)
@@ -227,10 +234,26 @@ function hideBtn() {
 
 nextImg.addEventListener("click", function () {
     curImg = puzzleCd.getNextImg(curImg);
-    createPzl(3,puzzlePos);
+    if(curDif == 'easy'){
+        createPzl(3,puzzlePos);
+    }
+    else if(curDif == 'medium'){
+        createMedium(4, puzzlePosMedium);
+    }
+    else{
+        createHard(4, puzzlePosHard);
+    }
 });
 
 prevImg.addEventListener("click", function () {
     curImg = puzzleCd.getPrevImg(curImg);
-    createPzl(3,puzzlePos);
+    if(curDif == 'easy'){
+        createPzl(3,puzzlePos);
+    }
+    else if(curDif == 'medium'){
+        createMedium(4, puzzlePosMedium);
+    }
+    else{
+        createHard(4, puzzlePosHard);
+    }
 });
