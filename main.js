@@ -1,4 +1,3 @@
-import changeElementBackgroundImage from "./javascript/displayimg.js";
 import { puzzle } from "./javascript/puzzle.js";
 
 const nav = document.querySelector('.navbar');
@@ -103,6 +102,26 @@ function createHard(gridNum,puzzleNum){
     //Create hard puzzle
     puzzleCd.hardDiff(gridNum, puzzleNum);
 }
+
+//Event listener on navbar
+nav.addEventListener("click",(e)=>{
+    let target = e.target.id;
+    switch(target){
+        case 'puzzle1':
+            createPzl(3,puzzlePos);
+            break;
+        case 'puzzle2':
+            createMedium(4, puzzlePosMedium);
+            break;
+        case 'puzzle3':
+            createHard(4, puzzlePosHard);
+            break;
+        case 'select-image':
+            console.log(target)
+            gameModal.classList.remove('hide');
+            break;
+    }
+})
 
 //disable the default behavior of the browser when dragging
 document.addEventListener("dragover", (e)=>{
@@ -215,16 +234,3 @@ prevImg.addEventListener("click", function () {
     curImg = puzzleCd.getPrevImg(curImg);
     createPzl(3,puzzlePos);
 });
-
-const easy = document.getElementById("puzzle1");
-const medium = document.getElementById("puzzle2");
-const hard = document.getElementById("puzzle3");
-easy.addEventListener("click", function() {
-    createPzl(3,puzzlePos);
-})
-medium.addEventListener("click", function() {
-    createMedium(4, puzzlePosMedium);
-})
-hard.addEventListener("click", function() {
-    createHard(4, puzzlePosHard);
-})
