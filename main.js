@@ -6,14 +6,14 @@ const container = document.querySelector('#container');
 const toggle = document.querySelector('.toggle input');
 
 //Template array for each puzzles
-let puzzlePos = ["left top","center top","right top","left center","center center","right center","left bottom","center bottom", "empty"];
+const puzzlePos = ["left top","center top","right top","left center","center center","right center","left bottom","center bottom", "empty"];
 //Medium Difficulty Array
-let puzzlePosMedium = ["left 7% top 0%","left 37% top 0%","right 33% top 0%","right 3% top 0%",
+const puzzlePosMedium = ["left 7% top 0%","left 37% top 0%","right 33% top 0%","right 3% top 0%",
 "left 6% top 35%","left 37% top 35%","right 33% top 35%","right 2% top 35%",
 "left 6% bottom 160%","left 37% bottom 160%","right 33% bottom 160%","right 2% bottom 160%",
 "left 6% bottom 130%","left 37% bottom 130%", "right 33% bottom 130%","empty"];
 //Hard Difficulty Array
-let puzzlePosHard = ["left 3% top 4%","left 27% top 4%","left 50% top 4%","right 27% top 4%","right 3% top 4%",
+const puzzlePosHard = ["left 3% top 4%","left 27% top 4%","left 50% top 4%","right 27% top 4%","right 3% top 4%",
 "left 2% top 30%","left 27% top 30%","left 50% top 30%","right 27% top 30%","right 3% top 30%",
 "left 2% top 55%","left 27% top 55%","left 50% top 55%","right 27% top 55%", "right 3% top 55%",
 "left 2% bottom 144%","left 27% bottom 144%","left 50% bottom 144%","right 27% bottom 144%","right 3% bottom 144%",
@@ -61,7 +61,7 @@ function createPzl(gridNum,puzzleNum){
     //Sort draggable Tiles
     curDrag = puzzleCd.sortDrag(curPuzzleState);
     //Attribute draggable status to respective tiles
-    puzzleCd.attributeDrag(curDrag);
+    puzzleCd.attributeDrag(curDrag, toggle.checked);
 }
 
 // Create medium difficulty puzzle based on the same rules as createPzl()
@@ -79,7 +79,7 @@ function createMedium(gridNum,puzzleNum){
     //Sort draggable Tiles
     curDrag = puzzleCd.sortDrag(curPuzzleState);
     //Attribute draggable status to respective tiles
-    puzzleCd.attributeDrag(curDrag);
+    puzzleCd.attributeDrag(curDrag, toggle.checked);
     //Create medium puzzle
     puzzleCd.mediumDiff(gridNum, puzzleNum);
 }
@@ -99,7 +99,7 @@ function createHard(gridNum,puzzleNum){
     //Sort draggable Tiles
     curDrag = puzzleCd.sortDrag(curPuzzleState);
     //Attribute draggable status to respective tiles
-    puzzleCd.attributeDrag(curDrag);
+    puzzleCd.attributeDrag(curDrag, toggle.checked);
     //Create hard puzzle
     puzzleCd.hardDiff(gridNum, puzzleNum);
 }
@@ -112,43 +112,48 @@ document.addEventListener("dragover", (e)=>{
 //Event listeners for toggle
 toggle.addEventListener("click",()=>{
     let onoff = toggle.parentNode.querySelector('.clickOrDrag');
-    onoff.textContent = toggle.checked? "Click":"Drag";
+    let state = toggle.checked? "Click":"Drag";
+    onoff.textContent = state;
+    toggle.checked? puzzleCd.preventDrag(curDrag):puzzleCd.attributeDrag(curDrag, toggle.checked);
 })
 
 //Event listeners for tiles inside container
 container.addEventListener("dragstart",(e)=>{
-    srcTile = e.target;
+    srcTile = e.target; 
 })
 
 //Event listeners for droped tile
 container.addEventListener("drop", (e)=>{
     let dropZone = e.target;
     if(dropZone.classList == "emptyImg"){
-        dropZone.classList.remove("emptyImg");
-        dropZone.style.background = `${srcTile.style.backgroundImage} ${srcTile.style.backgroundPosition} / ${srcTile.style.backgroundSize}`;
-
-        srcTile.style.background = "none";
-        srcTile.classList.add("emptyImg");
-
-        curPuzzleState = puzzleCd.getPuzzleState();
-
-        //Check if gameover
-        if(puzzleCd.gameOver(curPuzzleState,puzzlePos)){
-            showModal();
-        }
-        else{
-            curDrag = puzzleCd.sortDrag(curPuzzleState);
-            puzzleCd.attributeDrag(curDrag);
-        }
+        swapTiles(dropZone, srcTile);
     }
 })
 
-//Check if puzzle is correct
-function isCorrect(solution, content) {
-    if(JSON.stringify(solution) == JSON.stringify(content)) {
-        return true;
-    } else {
-        return false;
+container.addEventListener("click", (e)=>{
+    let tile = e.target
+    if(tile.style.cursor == 'pointer' && toggle.checked){
+        let eTile = container.querySelector(".emptyImg");
+        swapTiles(eTile, tile);
+    }
+})
+
+function swapTiles(eTile, tile){
+    eTile.classList.remove("emptyImg");
+    eTile.style.background = `${tile.style.backgroundImage} ${tile.style.backgroundPosition} / ${tile.style.backgroundSize}`;
+
+    tile.style.background = "none";
+    tile.classList.add("emptyImg");
+
+    curPuzzleState = puzzleCd.getPuzzleState();
+
+    //Check if gameover
+    if(puzzleCd.gameOver(curPuzzleState,puzzlePos)){
+        showModal();
+    }
+    else{
+        curDrag = puzzleCd.sortDrag(curPuzzleState);
+        puzzleCd.attributeDrag(curDrag, toggle.checked);
     }
 }
 

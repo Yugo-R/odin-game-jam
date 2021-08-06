@@ -117,7 +117,7 @@ export let puzzle = ()=>{
                 }
             }
         },
-        attributeDrag:(tilesPos)=>{
+        attributeDrag:(tilesPos, state)=>{
             let tiles = container.querySelectorAll('li');
             
             //reset draggable tiles
@@ -126,9 +126,15 @@ export let puzzle = ()=>{
                 tile.style.cursor = "grab"
             })
             for(let j =0; j < tilesPos.length; j++){
-               tiles[tilesPos[j]].setAttribute("draggable", true);
+               state?tiles[tilesPos[j]].setAttribute("draggable", false):tiles[tilesPos[j]].setAttribute("draggable", true);
                tiles[tilesPos[j]].style.cursor = "pointer"
             }
+        },
+        preventDrag:(tilesPos)=>{
+            let tiles = container.querySelectorAll('li');
+            for(let j =0; j < tilesPos.length; j++){
+                tiles[tilesPos[j]].setAttribute("draggable", false);
+             }
         },
         getPuzzleState:()=>{
            let li = container.querySelectorAll('li');
