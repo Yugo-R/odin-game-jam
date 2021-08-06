@@ -92,7 +92,7 @@ export let puzzle = ()=>{
         //Return an array of draggable positions
         //NEED REVISE
         sortDrag:(tiles)=>{
-            let colLength = tiles.length == 9? 3:4;
+            let colLength = Math.sqrt(tiles.length)
             //Two pointers x and y that check edges
             let x = 0;
             let y = colLength-1;
