@@ -3,6 +3,7 @@ import { puzzle } from "./javascript/puzzle.js";
 
 const nav = document.querySelector('.navbar');
 const container = document.querySelector('#container');
+const toggle = document.querySelector('.toggle input');
 
 //Template array for each puzzles
 let puzzlePos = ["left top","center top","right top","left center","center center","right center","left bottom","center bottom", "empty"];
@@ -107,6 +108,12 @@ function createHard(gridNum,puzzleNum){
 document.addEventListener("dragover", (e)=>{
     e.preventDefault();
   });
+
+//Event listeners for toggle
+toggle.addEventListener("click",()=>{
+    let onoff = toggle.parentNode.querySelector('.clickOrDrag');
+    onoff.textContent = toggle.checked? "Click":"Drag";
+})
 
 //Event listeners for tiles inside container
 container.addEventListener("dragstart",(e)=>{
