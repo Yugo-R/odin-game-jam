@@ -194,10 +194,6 @@ function hideBtn() {
     nextImg.classList.add("hideBtn");
 }
 
-//Change Image on click
-// let li = document.getElementById('container').getElementsByTagName('li');
-// console.log (li);
-
 nextImg.addEventListener("click", function () {
     curImg = puzzleCd.getNextImg(curImg);
     createPzl(3,puzzlePos);
