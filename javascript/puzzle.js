@@ -79,7 +79,6 @@ export let puzzle = ()=>{
                       }
                 }
             }while(k%2!=0);
-            console.log(k)
         },
         resetPuzzle: ()=>{
             while(container.firstChild){

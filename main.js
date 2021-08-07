@@ -130,7 +130,6 @@ nav.addEventListener("click",(e)=>{
             curDif = 'hard';
             break;
         case 'select-image':
-            console.log(target)
             gameModal.classList.remove('hide');
             break;
     }
