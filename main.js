@@ -57,6 +57,8 @@ function createPzl(gridNum,puzzleNum){
     curPuzzleState = [...puzzleNum];
     //shuffle puzzle(shuffle the array)
     puzzleCd.shufflePuzzle(curPuzzleState);
+    //Check validity of puzzle
+    puzzleCd.makeValid(curPuzzleState,puzzlePos);
     //Create puzzle
     puzzleCd.createImgPuzzle(curPuzzleState, curImg);
     //Resize container
@@ -75,6 +77,8 @@ function createMedium(gridNum,puzzleNum){
     curPuzzleState = [...puzzleNum];
     //shuffle puzzle(shuffle the array)
     puzzleCd.shufflePuzzle(curPuzzleState);
+    //Check validity of puzzle
+    puzzleCd.makeValid(curPuzzleState,puzzlePosMedium);
     //Create puzzle
     puzzleCd.createImgPuzzle(curPuzzleState, curImg);
     //Resize container
@@ -95,6 +99,8 @@ function createHard(gridNum,puzzleNum){
     curPuzzleState = [...puzzleNum];
     //shuffle puzzle(shuffle the array)
     puzzleCd.shufflePuzzle(curPuzzleState);
+    //Check validity of puzzle
+    puzzleCd.makeValid(curPuzzleState,puzzlePosHard);
     //Create puzzle
     puzzleCd.createImgPuzzle(curPuzzleState, curImg);
     //Resize container
@@ -199,7 +205,18 @@ gameIntro.addEventListener("click", (e)=>{
     }
     else{
         curImg = puzzleCd.getImg(li)
-        createPzl(3,puzzlePos);
+        switch(curDif){
+            case "easy":
+                createPzl(3,puzzlePos);
+                break;
+            case "medium":
+                createMedium(4,puzzlePosMedium);
+                break;
+            case "hard":
+                createHard(4,puzzlePosHard);
+                break;
+        }
+        
     }
 })
 

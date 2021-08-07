@@ -14,7 +14,6 @@ export let puzzle = ()=>{
         "indonesia":"../images/filippo-cesarini-BS0wAXTkEPY-unsplash.jpg"
     }
     return {
-        //NEED REVISING
         createPuzzle: (puzzle)=>{
             for(let i=0; i < puzzle.length; i++){
                 if(puzzle[i] == "empty"){
@@ -29,7 +28,6 @@ export let puzzle = ()=>{
                 }
             }
         },
-        //NEED REVISING
         createImgPuzzle:(puzzle, img)=>{
             if(!img){
                 img = imageArray[0];
@@ -51,19 +49,43 @@ export let puzzle = ()=>{
         },
         shufflePuzzle:(puzzle)=>{
             //Fisher Yates algorithm to shuffle array
-            for (let i = puzzle.length - 1; i > 0; i--) {
+            for (let i = puzzle.length - 2; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
                 const temp = puzzle[i];
                 puzzle[i] = puzzle[j];
                 puzzle[j] = temp;
               }
         },
+        //Make the puzzle solvable
+        makeValid:(puzzle,pzlTmp)=>{
+            let dict ={};
+            for(let i =0; i<pzlTmp.length;i++){
+                dict[pzlTmp[i]]=i+1;
+            }
+            let k=0;
+            do{
+                k = 0;
+                for(let i=0; i<puzzle.length; i++){
+                    if(dict[puzzle[i]] > i){
+                        k += dict[puzzle[i]] - i+1;
+                    }
+                }
+                if(k%2!=0){
+                    for (let i = puzzle.length - 2; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        const temp = puzzle[i];
+                        puzzle[i] = puzzle[j];
+                        puzzle[j] = temp;
+                      }
+                }
+            }while(k%2!=0);
+            console.log(k)
+        },
         resetPuzzle: ()=>{
             while(container.firstChild){
                 container.removeChild(container.firstChild);
             };
         },
-        //NEED REVISING
         resizePuzzleContainer:(col)=>{
             let baseCol = 3;
             let newCol = Math.abs(baseCol - col);
@@ -90,7 +112,6 @@ export let puzzle = ()=>{
             }
         },
         //Return an array of draggable positions
-        //NEED REVISE
         sortDrag:(tiles)=>{
             let colLength = Math.sqrt(tiles.length)
             //Two pointers x and y that check edges
@@ -180,7 +201,6 @@ export let puzzle = ()=>{
                 return imgDict[img];
             }
         },
-        //NEED REVISE
         mediumDiff:(col)=>{
             let baseCol = 4;
             let newCol = Math.abs(baseCol - col);
@@ -208,7 +228,6 @@ export let puzzle = ()=>{
             }
         },
         //Get 5x5 puzzle
-        //NEED REVISE
         hardDiff:(col)=>{
             let baseCol = 5;
             let newCol = Math.abs(baseCol - col);
